@@ -1,0 +1,220 @@
+---
+- question: What is an SFP? Where would you expect to find one?
+  answer: >-
+    A Small Form-factor Pluggable (SFP) is a small transceiver that plugs into
+    the SFP port of a network switch and connects to Fibre Channel and Gigabit
+    Ethernet (GbE) optical fiber cables at the other end.
+  years:
+    - 2017:
+        - AGM
+
+- question: >-
+    Why do we only allow packets through our firewall on a select number of
+    ports?
+  answer: 'The less ports open the better.'
+  years:
+    - 2017:
+        - AGM
+
+- question: |-
+    What ports do the following services typically use? What protocols do they
+    use?
+      - DNS
+      - HTTPS
+      - VNC
+      - IRC
+      - SMTP
+  answer: |-
+    - DNS
+      - 53
+    - HTTPS
+      - 443
+    - VNC
+      - 5900+
+    - IRC
+      - 194
+    - SMTP
+      - 25
+  years:
+    - 2018:
+        - AGM
+
+- question: >-
+    No one can seem to connect to anything on Redbrick. Walk us through how you
+  answer: ''
+  years:
+    - 2017:
+        - AGM
+
+- question: 'What is SNMP? What could SNMP be used for?'
+  answer: |-
+    - SNMP is the Simple Network Management Protocol
+    - SNMP can be used to monitor different network devices.
+  years:
+    - 2018:
+        - AGM
+
+- question: >-
+    People seem to be able to connect via IP but not via DNS. Name some tools
+    you could use to trouble shoot this.
+  answer: |-
+    - `nslookup`
+    - `dig`
+    - `tcptraceroute`
+    - `ip addr show`
+  years:
+    - 2017:
+        - AGM
+
+- question: >-
+    How would you go about looking at a config on one our switches or SRX
+    (juniper or cisco)
+  answer: ''
+  years:
+    - 2017:
+        - AGM
+
+- question: >-
+    Give the syntax for adding an entry to DNS(bind9) with the following info
+    `graphs.redbrick.dcu.ie` point to `136.206.15.69`, `pretty.redbrick.dcu.ie`
+    point to `graphs.redbrick.dcu.ie` while `graphs.redbrick.dcu.ie` also points
+    to `2001:41d0:e:1232::1`
+  answer: |-
+    ```bind9
+    graphs IN A 136.206.15.69
+    graphs IN AAAA 2001:41d0:e:1232::1
+    pretty IN CNAME graphs.redbrick.dcu.ie
+    ```
+  years:
+    - 2017:
+        - AGM
+
+- question: >-
+    Explain briefly what happens when you type in `redbrick.dcu.ie` into a
+    browser.
+  answer: ''
+  years:
+    - 2017:
+        - AGM
+
+- question: 'When would you use `tcpdump`. Give an example of its syntax.'
+  answer: |-
+     - You would use `tcpdump` when you wanted to view the contents of packets
+       on a network interface
+     - `tcpdump host azazel`
+  years:
+    - 2017:
+        - AGM
+
+- question: 'What is a VLAN? What are they used for?'
+  answer: >-
+    A VLAN (Virtual Local Access Network) is a set of end stations and the
+    switch ports that connect them. A VLAN allows several networks to work
+    virtually as one LAN.
+  years:
+    - 2017:
+        - AGM
+
+- question: >-
+    What is a virtual interface? What file would you modify to create one?
+  answer: |-
+    - A virtual interface is a virtualised representation of a computer network
+      interface that may or may not correspond directly to a network interface
+      controller.
+    - `/etc/network/interfaces`
+  years:
+    - 2017:
+        - AGM
+
+- question: >-
+    Write a DNS entry to bind the address `136.206.15.25` to
+    `azazel.redbrick.dcu.ie`, assumining your $ORIGIN is defined as
+    `redbrick.dcu.ie`.
+  answer: |-
+   ```bind9
+   $TTL 604800 @ IN SOA azazel.redbrick.dcu.ie. root.redbrick.dcu.ie. ;
+      Serial 604800 ;
+      Refresh 86400 ;
+      Retry 2419200 ;
+      Expire 604800 ;
+      Negative Cache TTL ;
+    @ IN NS azazel.redbrick.dcu.ie. azazel IN A 136.206.15.25
+    ```
+  years:
+    - 2018:
+        - AGM
+
+- question: >-
+    What does BGP stand for? What situations would it typically be used in?
+  answer: |-
+    - BGP stands for Border Gateway Port.
+    - Used as the routing protocol both between (external BGP) and within
+      (internal BGP) ISP's
+  years:
+    - 2018:
+        - AGM
+
+- question: >-
+    What command would you run on one of our Ubuntu 14.04 machines to get rid of
+    your current IP address, and request a new one?
+  answer: |-
+    - To release your current address - `sudo dhclient -r`
+    - To request a new address - `sudo dhclient`
+  years:
+    - 2018:
+        - AGM
+
+- question: >-
+    Redbrick owns 2x /24 of IPv4. What does this mean?
+  answer: |-
+    - This means there are two blocks of IP addresses in a registry assigned to
+      Redbrick, and only Redbrick.
+    - /24 is CIDR notation. It signifies there may be up to 254 hosts in both of
+      these IPv4 blocks.
+  years:
+    - 2018:
+        - AGM
+
+- question: >-
+    What file would you modify on a Ubuntu system to make changes to network
+    interfaces persistent?
+  answer: '`/etc/network/interfaces`'
+  years:
+    - 2018:
+        - AGM
+
+- question: >-
+    We use Cisco and Juniper switches in Redbrick. How would you view the
+    currently running config on a Cisco switch? How would you ensure this config
+    remains persistent after a restart of the switch?
+  answer: |-
+    - show running-configuration
+    - copy running-configuration startup-configuration
+  years:
+    - 2018:
+        - AGM
+
+- question: >-
+    How many disparate networks exist within Redbrick? What are they all used
+    for?
+  answer: >-
+    Not sure, because RBVM isn't a thing right? So docs.redbrick.dcu.ie may
+    not be correct on current number, maybe it is I don't know.
+  years:
+    - 2018:
+        - AGM
+
+- question: >-
+    You should always change the serial number when modifying DNS entries. What
+    does this mean, and why should you do it? What would happen if you didn’t?
+  answer: |-
+    - This means you should must make a change to the serial number before each
+      incremental change to your DNS entry.
+    - You should do this as this is how workers keep track if they need to
+      update their cached copy of the zone.
+    - If you don't update the serial number, the worker will continue to read
+      the cached copy of the zone.
+  years:
+    - 2018:
+        - AGM
+...

@@ -1,0 +1,93 @@
+---
+- question: >-
+    Mailing lists are broken and we need to send the announce to all our users.
+    Write a script to send the announce to our list of users, which is stored in
+    a csv file, of `name,username,alt-mail` called `iShouldntHaveThis.csv`.
+  answer: |-
+    ```bash
+    while IFS=, read -r col1 col2 col3
+    do
+        echo "$col2@redbrick.dcu.ie" >> emails.txt
+    done < iShouldNotHaveThis.csv
+
+    var=$(tr '\n', ',' < emails.txt)
+    email=$(cat announce.txt)
+    echo "Subject:Test
+    From:branch@redbrick.dcu.ie
+
+    $email" | sendmail -t $var
+    ```
+  years:
+    - 2017:
+        - AGM
+    - 2018:
+        - AGM
+
+- question: >-
+    Write a script that takes usernames and password hashes from `/etc/shadow`.
+    The script should then try and crack them using john the ripper. If the
+    password is found in under 10 minutes email the user their password and tell
+    them it’s shit.
+  answer: |-
+    ```bash
+    unshadow /etc/passwd /etc/shadow.txt > passwords.txt
+    john --wordlist=/usr/share/wordlists/sqlmap.txt passwords.txt
+    john --show passwords.txt
+    ```
+  years:
+    - 2017:
+        - AGM
+
+- question: >-
+    You've realised that we run a 10 year old version of php and update it. All
+    the old php scripts break. Turns out users with old mysql password, with a
+    hash of length 16 bit, need to reset their password. Write a script to find
+    all users who need to change their with the old passwords, email them saying
+    they need to change their password and that their php has been disabled. The
+    script should also disable those users php if it access mysql.
+  answer: ''
+  years:
+    - 2017:
+        - AGM
+
+
+- question: >-
+    Write a script to scan all users' web directories for world editable files.
+    Change their permissions to the correct permissions and email the user
+    telling them the file you changed and why this is important.
+  answer: ''
+  years:
+    - 2017:
+        - AGM
+
+- question: Write something to make us laugh.
+  answer: |-
+    ```python
+    from rb_committee import meeting
+    import mcmahon
+
+    while meeting == True:
+        mcmahon.doesPutUpHisHandOnce()
+    ```
+    ```bash
+    #!/bin/bash
+    (echo "The best kind of errors, are the ones you can't see :)" && \
+    python3 ThIsfiLEdoEsNTexISt.py) 2> /dev/null
+    ```
+  years:
+    - 2017:
+        - AGM
+    - 2018:
+        - AGM
+
+- question: >-
+    Write a script to retrieve the logs of all currently running Docker
+    containers on a system, and compress each one into a `.tar` file with the
+    same name as the source container.
+  answer: ''
+  years:
+    - 2018:
+        - AGM
+    - 2018:
+        - AGM
+...

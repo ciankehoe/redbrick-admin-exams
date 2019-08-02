@@ -1,0 +1,88 @@
+---
+- question: 'What is a container? How does one differ from a VM?'
+  answer: >-
+    Virtual machines and containers differ in several ways, but the primary
+    difference is that containers provide a way to virtualize an OS so that
+    multiple workloads can run on a single OS instance. With VMs, the hardware
+    is being virtualized to run multiple OS instances. Containers’ speed,
+    agility, and portability make them yet another tool to help streamline
+    software development.
+  years:
+    - 2018:
+        - AGM
+- question: 'What is LXC? List 2 differences between LXC and Docker.'
+  answer: >-
+    - LXC is a container technology which gives you lightweight Linux
+      containers, which behave like thin VM's.
+    - Differences:
+      1. In comparison to Linux Containers, Docker is a single application
+         virtualization engine which is based on containers.
+      2. The Dokcer ecosystem makes use of Dockerfiles, they let you create your
+         container automatically according to your instructions, with your
+         application pre-configured. There is nothing really comparable in LXC.
+  years:
+    - 2018:
+        - AGM
+
+- question: >-
+    When running a Docker container, how would you bind port 22000 on the host
+    to port 80 of the container?
+  answer: docker run -d --name app -p 22000:80 my/app
+  years:
+    - 2018:
+        - AGM
+
+- question: >-
+    What command would you use to download a Docker image from a registy? Give
+    an example usage of this command.
+  answer: docker pull hello-world
+  years:
+    - 2018:
+        - AGM
+
+- question: Illustrate 3 differences between Docker Swarm and Kubernetes.
+  answer: ''
+  years:
+    - 2018:
+        - AGM
+
+- question: What is a container orchestrator?
+  answer: >-
+    A container orchestrator is system which manages containerized applications
+    in a clustered environment. Examples include Swarm & Kubernetes.
+  years:
+    - 2018:
+        - AGM
+
+- question: What is the difference between ‘docker attach’ and ‘docker exec’?
+  answer: >-
+    - `docker attach < container-id >` will take you inside the bash terminal as
+      it's PID 1.
+    - `docker exec -it < container-id > bash` will not take you into PID 1 and
+      will instead create a new process for bash
+  years:
+    - 2018:
+        - AGM
+
+- question: What is Rkt?
+  answer: >-
+    rkt is an application container engine developed for modern production
+    cloud-native environments.
+  years:
+    - 2018:
+        - AGM
+
+- question: >-
+    In the context of a container orchestrator, what is the significance of the
+    term ‘consensus’?
+  answer: ''
+  years:
+    - 2018:
+        - AGM
+
+- question: What command would you use to delete unused Docker images & volumes?
+  answer: docker system prune -a -f
+  years:
+    - 2018:
+        - AGM
+...

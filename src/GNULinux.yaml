@@ -1,0 +1,188 @@
+---
+- question: 'What is `systemd`? What would be considered an alternative?'
+  answers: >-
+    systemd is a system and service manager.
+    System-V (SysV) is considered an alternative
+  years:
+    - 2018:
+        - AGM
+    - 2017:
+        - AGM
+
+- question: >-
+    You are trying to unmount your `/storage` volume, but `umount` keeps
+    complaining about it being busy. how would you determine who/what is using
+    it. and kill that process? How would you unmount it without killing the
+    process?
+  answer: |-
+    - To find who is using it using `lsof | grep /media/whatever`
+    - To kill that process use `kill -9 PID`
+    - `umount -l` (I think, not very sure on this part)
+  years:
+    - 2018:
+        - AGM
+    - 2017:
+        - AGM
+
+- question: "What is a `chroot`? Why would you use one?"
+  answer: |-
+    - A `chroot` is an operation which changes the apparent root directory for
+      the current running process and its subsequent children.
+    - Reasons to use a `chroot`:
+      - you can use it to keep different versions of one program
+      - you can use it to simulate an specific environment in order to test
+        some features
+      - you can use it to create images of a system different from your main one
+  years:
+    - 2018:
+        - AGM
+    - 2017:
+        - AGM
+
+- question: >-
+    Give 5 distinct advantages of using a package manager rather than building a
+    program from source. What command would you run to fully update a typical
+    Redbrick server?
+  answer: |-
+    - Much easier to install packages than building from source
+    - Packages are designed for your distro specifically
+    - They can be uninstalled, updated, and upgraded using the package manager
+    - Their dependencies will be taken care of by the package manager
+    - You don't need to install developer tools on your system
+      (make for example)
+    - They are sometimes patched by the package maintainer to fix distro
+      specific bugs
+    - `sudo apt-get update`
+  years:
+    - 2018:
+        - AGM
+    - 2017:
+        - AGM
+
+
+- question: >-
+    Ubuntu 12.04 is a pile of shit and you need to upgrade to the latest LTS
+    release of Ubuntu. What is y our process for the upgrade, such that it
+    inconveniences users of the system the least?
+  answer: |-
+    - Make a full backup of the data (I hear we do that hourly?)
+    - After a proper backup of the data run `sudo apt-get update` and
+      `sudo apt-get install update-manager-core`
+    - Edit `/etc/update-manager/release-upgrades` so the Prompt=lts
+    - Run `do-release-upgrade -d` to start the update
+    - Run `cat /etc/lsb-release` to check you've updated successfully
+  years:
+    - 2018:
+        - AGM
+
+- question: >-
+    You have a list of hundreds of compressed logfiles in `/var/log`. Give 3
+    ways of searching through these logs. Manually extracting and searching them
+    is not an option.
+  answer: |-
+    - `zgrep foo compressed_logs.gz`
+    - `zcat compressed-logs.gz | zless`
+    - `bzgrep foo compressed-logs.bz`
+  years:
+    - 2018:
+        - AGM
+    - 2017:
+        - AGM
+
+- question: What does 'LVM' stand for, and what does that actually mean?
+  answer: |-
+    Logical volume management (LVM) is a form of storage virtualisation that
+    offers system administrators a more flexible approach to managing disk
+    storage space than traditional partitioning.
+  years:
+    - 2018:
+        - AGM
+    - 2017:
+        - AGM
+
+- question: >-
+    Give a situation where you would use each of the following commands:
+      - dig
+      - swapon
+      - tcptraceroute
+      - w
+      - du
+  answer: |-
+    dig:
+      - looking up a dns entry
+      - `dig redbrick.dcu.ie` (displays information of redbrick.dcu.ie)
+    swapon:
+      - specify devices on which paging and swapping are to take place
+      - `swapon -s` (shows summary of swap usage by device)
+    tcptraceroute:
+      - trace route to a network host to see, if anywhere, the route to the host
+        is failing to complete
+      - `tcptraceroute redbrick.dcu.ie 443` (trace route OF redbrick.dcu.ie
+        traffic on port 443 (https))
+    w:
+      - look at who is logged in and what they are doing
+      - `w greenday` (shows me what greenday is up to)
+    du:
+      - estimate disk space usage
+      - `du -sh /home/mctastic` (shows me a summary of the total disk usage of
+        `/home/mctastic`)
+  years:
+    - 2018
+
+- question: What is LDAP? What is it used for in Redbrick?
+  answer: |-
+    - What is LDAP (Lightweight Directory Access Protocol) is an Internet
+      protocol that programs can use to look up information from a server.
+    - Redbrick uses this for logins to user services such as HackMD and Email.
+  years:
+    - 2018:
+        - AGM
+
+- question: What does FHS stand for? What is it?
+  answer: |-
+    - FHS stands for the Fileystem Hierarchy Standard.
+    - This defines the structure, names, locations, and permissions for many
+      file types and directories.
+    - Example: In FHS, all files and directories appear under the root directory
+      `/`, even if they are stored on different physical or virtual devices.
+  years:
+    - 2018:
+        - AGM
+- question: >-
+    A user has somehow renamed a file to a name with strange unicode characters
+    and you cannot delete that file by name. How would you go about deleting
+    that file? Give commands with parameters.
+  answer: ""
+  years:
+    - 2017:
+        - AGM
+
+- question: >-
+    You’ve just royally screwed your shell by running cat on a binary. How do
+    you fix this?
+  answer: >-
+    I usually panic and hit `Ctrl+C` a bunch, then realise I need to type
+    `reset`
+  years:
+    - 2017:
+        - AGM
+
+- question: >-
+    You want to create a user to be used by a daemon. What do you set its shell
+    to?
+  answer: '`sudo adduser --shell /usr/sbin/nologindaemonUser`'
+  years:
+    - 2017:
+        - AGM
+
+- question: >-
+    What is `fail2ban`? Is it a good idea to run it on your server, why?
+  answer: |-
+   - `fail2ban` is a piece of software which protects against brute force
+     attacks.
+   - Self explanatory right? It bans attackers for X minutes for N attempts and
+     brute forcing the login in Y time.
+  years:
+    - 2017:
+        - AGM
+...

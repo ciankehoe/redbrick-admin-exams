@@ -1,13 +1,13 @@
 ---
 - question: 'What is `systemd`? What would be considered an alternative?'
-  answers: >-
+  answer: >-
     systemd is a system and service manager.
     System-V (SysV) is considered an alternative
   years:
-    - 2018:
-        - AGM
-    - 2017:
-        - AGM
+    2018:
+      - AGM
+    2017:
+      - AGM
 
 - question: >-
     You are trying to unmount your `/storage` volume, but `umount` keeps
@@ -19,10 +19,10 @@
     - To kill that process use `kill -9 PID`
     - `umount -l` (I think, not very sure on this part)
   years:
-    - 2018:
-        - AGM
-    - 2017:
-        - AGM
+    2018:
+      - AGM
+    2017:
+      - AGM
 
 - question: "What is a `chroot`? Why would you use one?"
   answer: |-
@@ -34,10 +34,10 @@
         some features
       - you can use it to create images of a system different from your main one
   years:
-    - 2018:
-        - AGM
-    - 2017:
-        - AGM
+    2018:
+      - AGM
+    2017:
+      - AGM
 
 - question: >-
     Give 5 distinct advantages of using a package manager rather than building a
@@ -54,10 +54,10 @@
       specific bugs
     - `sudo apt-get update`
   years:
-    - 2018:
-        - AGM
-    - 2017:
-        - AGM
+    2018:
+      - AGM
+    2017:
+      - AGM
 
 
 - question: >-
@@ -72,8 +72,8 @@
     - Run `do-release-upgrade -d` to start the update
     - Run `cat /etc/lsb-release` to check you've updated successfully
   years:
-    - 2018:
-        - AGM
+    2018:
+      - AGM
 
 - question: >-
     You have a list of hundreds of compressed logfiles in `/var/log`. Give 3
@@ -84,10 +84,10 @@
     - `zcat compressed-logs.gz | zless`
     - `bzgrep foo compressed-logs.bz`
   years:
-    - 2018:
-        - AGM
-    - 2017:
-        - AGM
+    2018:
+      - AGM
+    2017:
+      - AGM
 
 - question: What does 'LVM' stand for, and what does that actually mean?
   answer: |-
@@ -95,10 +95,10 @@
     offers system administrators a more flexible approach to managing disk
     storage space than traditional partitioning.
   years:
-    - 2018:
-        - AGM
-    - 2017:
-        - AGM
+    2018:
+      - AGM
+    2017:
+      - AGM
 
 - question: >-
     Give a situation where you would use each of the following commands:
@@ -127,7 +127,8 @@
       - `du -sh /home/mctastic` (shows me a summary of the total disk usage of
         `/home/mctastic`)
   years:
-    - 2018
+    2018:
+      - AGM
 
 - question: What is LDAP? What is it used for in Redbrick?
   answer: |-
@@ -135,8 +136,8 @@
       protocol that programs can use to look up information from a server.
     - Redbrick uses this for logins to user services such as HackMD and Email.
   years:
-    - 2018:
-        - AGM
+    2018:
+      - AGM
 
 - question: What does FHS stand for? What is it?
   answer: |-
@@ -146,16 +147,17 @@
     - Example: In FHS, all files and directories appear under the root directory
       `/`, even if they are stored on different physical or virtual devices.
   years:
-    - 2018:
-        - AGM
+    2018:
+      - AGM
+
 - question: >-
     A user has somehow renamed a file to a name with strange unicode characters
     and you cannot delete that file by name. How would you go about deleting
     that file? Give commands with parameters.
   answer: ""
   years:
-    - 2017:
-        - AGM
+    2017:
+      - AGM
 
 - question: >-
     You’ve just royally screwed your shell by running cat on a binary. How do
@@ -164,16 +166,16 @@
     I usually panic and hit `Ctrl+C` a bunch, then realise I need to type
     `reset`
   years:
-    - 2017:
-        - AGM
+    2017:
+      - AGM
 
 - question: >-
     You want to create a user to be used by a daemon. What do you set its shell
     to?
   answer: '`sudo adduser --shell /usr/sbin/nologindaemonUser`'
   years:
-    - 2017:
-        - AGM
+    2017:
+      - AGM
 
 - question: >-
     What is `fail2ban`? Is it a good idea to run it on your server, why?
@@ -183,6 +185,6 @@
    - Self explanatory right? It bans attackers for X minutes for N attempts and
      brute forcing the login in Y time.
   years:
-    - 2017:
-        - AGM
+    2017:
+      - AGM
 ...

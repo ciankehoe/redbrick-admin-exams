@@ -4,31 +4,31 @@
     - Edit `/etc/ssh/sshd_config`, change `PermitRootLogin` from yes to no.
     - Reload `sshd`
   years:
-    - 2018:
-        - AGM
-    - 2017:
-        - AGM
+    2018:
+      - AGM
+    2017:
+      - AGM
 
 - question: 'Why might you want to run SSH on a non-standard port?'
   answer: 'It would be harder to brute force a user login.'
   years:
-    - 2017:
-        - AGM
+    2017:
+      - AGM
 
 - question: >-
     You have forgotten the `passwordsafe` password. How do you gain access?
   answer: Ask another admin, encrypt it with PGP if you have to.
   years:
-    - 2017:
-        - AGM
+    2017:
+      - AGM
 
 - question: '`chmod -R 777 ./*` Why is this literally the worst thing ever?'
   answer: >-
     It's basically open season for all users, groups and others to have a go at
     your files.
   years:
-    - 2017:
-        - AGM
+    2017:
+      - AGM
 
 - question: >-
     A user has launched a new website for another society. They type `ls -l` and
@@ -47,8 +47,8 @@
     - They could read the database password from the `database.php` file and
       steal any info
   years:
-    - 2017:
-        - AGM
+    2017:
+      - AGM
 
 - question: >-
     Apache runs as the `www-data` user, yet users scripts run as themselves. How
@@ -58,10 +58,10 @@
     would be able to rewrite a web site. Data written out by web servers will
     be owned by `www-data`.
   years:
-    - 2018:
-        - AGM
-    - 2017:
-        - AGM
+    2018:
+      - AGM
+    2017:
+      - AGM
 
 - question: >-
     What is wrong with the following?
@@ -70,21 +70,22 @@
     You are passing the Root Password to the console in plain text. This can
     show up in logs, history, you name it.
   years:
-    - 2018:
-        - AGM
-    - 2017:
-        - AGM
+    2018:
+      - AGM
+    2017:
+      - AGM
 
 - question: >-
     You see a massive spike in traffic from a pile of Chinese IP addresses.
     What do you do?
   answer: >-
-    Ban Chinese IP's via subnet with iptables rules. There's lots of chinese ip adress space  youll need a large subnet
+    Ban Chinese IP's via subnet with iptables rules. There's lots of chinese ip
+    adress space  youll need a large subnet
   years:
-    - 2018:
-        - AGM
-    - 2017:
-        - AGM
+    2018:
+      - AGM
+    2017:
+      - AGM
 
 - question: |-
     Briefly explain the purpose of each of the following:
@@ -106,17 +107,17 @@
         and server
     - KPTI
   years:
-    - 2018:
-        - AGM
-    - 2017:
-        - AGM
+    2018:
+      - AGM
+    2017:
+      - AGM
 
 - question: >-
     How would you view the currently enforced iptables rules on a system?
   answer: '`iptables -L`'
   years:
-    - 2018:
-        - AGM
+    2018:
+      - AGM
 
 - question: >-
     What are Spectre and Meltdown? Briefly explain how ONE of them could be
@@ -129,8 +130,8 @@
       memory, and thus also the secrets, of other programs and the operating
       system.
   years:
-    - 2018:
-        - AGM
+    2018:
+      - AGM
 
 - question: >-
     What is fail2ban? How would you help a user who has fallen foul of fail2ban?
@@ -138,20 +139,20 @@
     - fail2ban is a piece of software which protects against brute force attacks
     - `sudo fail2ban-client get $JAIL_NAME actionunban $IP_ADDRESS`
   years:
-    - 2018:
-        - AGM
+    2018:
+      - AGM
 
 - question: What is a CVE, and why should you care?
   answer: ''
   years:
-    - 2018:
-        - AGM
+    2018:
+      - AGM
 
 - question: Tell us something interesting you know about computer security.
   answer: ''
   years:
-    - 2018:
-        - AGM
+    2018:
+      - AGM
 
 - question: >-
     You left a terminal unlocked where you were logged into a Redbrick server as
@@ -159,8 +160,8 @@
     How could you go about finding out what they did?
   answer: ''
   years:
-    - 2018:
-        - AGM
+    2018:
+      - AGM
 
 - question: >-
     Name 3 things you would do to secure a newly-installed Ubuntu 16.04 server.
@@ -169,8 +170,8 @@
    - Set up SSH key login.
    - Set up fail2ban with a sshd jail.
   years:
-    - 2018:
-        - AGM
+    2018:
+      - AGM
 
 - question: >-
     What is the difference between ‘sudo’ and ‘su’?
@@ -180,18 +181,18 @@
     with root privileges – it doesn't switch to the root user or require a
     separate root user password.
   years:
-    - 2018:
-        - AGM
+    2018:
+      - AGM
 
 - question: What is PAM? What do we use it in conjunction with?
   answer: ''
   years:
-    - 2018:
-        - AGM
+    2018:
+      - AGM
 
 - question: Why do Redbrick NOT use POP, FTP or Telnet?
   answer: because all of these are unencrypted
   years:
-    - 2018:
-        - AGM
+    2018:
+      - AGM
 ...

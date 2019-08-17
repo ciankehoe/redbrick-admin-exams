@@ -2,8 +2,8 @@
 - question: What is pf?
   answer: "pf is a packert filter on BSD systems. It is like iptables on Linux"
   years:
-    - 2018:
-        - AGM
+    2018:
+      - AGM
 
 - question: >-
     What does ‘BSD’ stand for? What version does Redbrick use? What do we use it
@@ -13,8 +13,8 @@
      - FreeBSD
      - Halfpint (password safe, and admin box/bastion host)
   years:
-    - 2018:
-        - AGM
+    2018:
+      - AGM
 
 - question: >-
     Illustrate 3 differences between a GNU/Linux system and a FreeBSD system.
@@ -28,10 +28,10 @@
     3. Different styles of booting - BSD `rc.d` style booting vs Linux `SysV`
        style `init.d` booting.
   years:
-    - 2017:
-        - AGM
-    - 2018:
-        - AGM
+    2017:
+      - AGM
+    2018:
+      - AGM
 
 
 - question: >-
@@ -42,10 +42,10 @@
     - Use something like `pw groupmod wheel -m $USERNAME` to add a user to the
       wheel group.
   years:
-    - 2017:
-        - AGM
-    - 2018:
-        - AGM
+    2017:
+      - AGM
+    2018:
+      - AGM
 
 - question: What is a Jail? Why might you want to use one?
   answer: |-
@@ -56,21 +56,22 @@
       example, if you want to define a clear-cut separation between hosted
       services and those of other users.
   years:
-    - 2017:
-        - AGM
+    2017:
+      - AGM
+
 - question: What does Redbrick use FreeBSD for?
   answer: Password safe, and Bastion host
   years:
-    - 2017:
-        - AGM
+    2017:
+      - AGM
 
 - question: 'What utility would you use to manage users and groups on FreeBSD?'
   answer: '`pw` can be used to modify all aspects of user accounts'
   years:
-    - 2017:
-        - AGM
-    - 2018:
-        - AGM
+    2017:
+      - AGM
+    2018:
+      - AGM
 
 
 - question: "How would you have a script `resign.sh` run on startup?"
@@ -78,36 +79,36 @@
     - Probably use BSD's `cron`. It understand `@reboot` as a time directive.
     - So, something like `@reboot /home/user/resign.sh`
   years:
-    - 2017:
-        - AGM
-    - 2018:
-        - AGM
+    2017:
+      - AGM
+    2018:
+      - AGM
 
 - question: 'How would you configure a network interface on FreeBSD?'
   answer: '`ifconfig interface ed0`'
   years:
-    - 2017:
-        - AGM
-    - 2018:
-        - AGM
+    2017:
+      - AGM
+    2018:
+      - AGM
 
 - question: What is the command to list the currently loaded pf rules?
   answer: '`pfctl -s rules`'
   years:
-    - 2017:
-        - AGM
+    2017:
+      - AGM
 
 - question: How would you install packages in FreeBSD?
   answer: Packages can be installed in FreeBSD through the ports system.
   years:
-    - 2017:
-        - AGM
+    2017:
+      - AGM
 
 - question: How would you show the routing table in FreeBSD?
   answer: "`netstat -rn` works, I don't know if you can do it using `route`."
   years:
-    - 2017:
-        - AGM
+    2017:
+      - AGM
 
 - question: "What does `ports` mean in the context of a FreeBSD system?"
   answer: >-
@@ -115,16 +116,16 @@
     way for administrators to install applications. It's really cool from what
     I hear, I think it uses keys to verify the integrity of downloaded files?
   years:
-    - 2018:
-        - AGM
+    2018:
+      - AGM
 
 - question: "How would you install a new package on FreeBSD"
   answer: >-
     - portsnap fetch \$PACKAGE
     - portsnap extract \$PACKAGE
   years:
-    - 2018:
-        - AGM
+    2018:
+      - AGM
 
 - question: "What is 'dtrace' and what does it do?"
   answer: >-
@@ -133,6 +134,6 @@
       of not only user level software (apps, databases, webservers, etc) but on
       the kernel and drivers.
   years:
-    - 2018:
-        - AGM
+    2018:
+      - AGM
 ...

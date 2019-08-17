@@ -18,10 +18,10 @@
     $email" | sendmail -t $var
     ```
   years:
-    - 2017:
-        - AGM
-    - 2018:
-        - AGM
+    2017:
+      - AGM
+    2018:
+      - AGM
 
 - question: >-
     Write a script that takes usernames and password hashes from `/etc/shadow`.
@@ -35,8 +35,8 @@
     john --show passwords.txt
     ```
   years:
-    - 2017:
-        - AGM
+    2017:
+      - AGM
 
 - question: >-
     You've realised that we run a 10 year old version of php and update it. All
@@ -47,8 +47,8 @@
     script should also disable those users php if it access mysql.
   answer: ''
   years:
-    - 2017:
-        - AGM
+    2017:
+      - AGM
 
 
 - question: >-
@@ -57,8 +57,8 @@
     telling them the file you changed and why this is important.
   answer: ''
   years:
-    - 2017:
-        - AGM
+    2017:
+      - AGM
 
 - question: Write something to make us laugh.
   answer: |-
@@ -75,10 +75,10 @@
     python3 ThIsfiLEdoEsNTexISt.py) 2> /dev/null
     ```
   years:
-    - 2017:
-        - AGM
-    - 2018:
-        - AGM
+    2017:
+      - AGM
+    2018:
+      - AGM
 
 - question: >-
     Write a script to retrieve the logs of all currently running Docker
@@ -86,8 +86,6 @@
     same name as the source container.
   answer: ''
   years:
-    - 2018:
-        - AGM
-    - 2018:
-        - AGM
+    2018:
+      - AGM
 ...

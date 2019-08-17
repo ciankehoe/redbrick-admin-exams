@@ -30,7 +30,7 @@
     Finally restart ssh `sudo service ssh restart`.
     5. Enforce SSH key login Change `PasswordAuthentication yes` to
        `PasswordAuthentication no`, then restart ssh `sudo service ssh restart`.
-    6. Create the ‘haxor’ user
+    6. Create the `haxor` user
     ```
     sudo adduser haxor
     ```
@@ -43,6 +43,6 @@
     sudo adduser --shell /usr/sbin/nologin pi
     ```
   years:
-    - 2018:
-        - AGM
+    2018:
+      - AGM
 ...

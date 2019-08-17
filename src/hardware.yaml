@@ -2,8 +2,8 @@
 - question: 'What does NIC stand for?'
   answer: 'Network Interface Card'
   years:
-    - 2018:
-        - AGM
+    2018:
+      - AGM
 
 - question: >-
     You have 5 2TB drives in a RAID 6 array. Give a short explanation of what
@@ -23,8 +23,8 @@
      efficiently.
    - Out of a possible 20TB, 18TB is available for storage.
   years:
-    - 2018:
-        - AGM
+    2018:
+      - AGM
 
 - question: What does UPS stand for? Where would you mount a UPS and why?
   answer: |-
@@ -33,8 +33,8 @@
       power to provide power in the event of an outage.
     - You should mount this in a rack enclosure??
   years:
-    - 2018:
-        - AGM
+    2018:
+      - AGM
 
 - question: What is DAS? Does Redbrick have any DAS and if so, where?
   answer: |-
@@ -44,8 +44,8 @@
     - It says we do for Azazel on docs.redbrick.dcu.ie, but I'm not sure what
       Worf is
   years:
-    - 2018:
-        - AGM
+    2018:
+      - AGM
 
 - question: The air conditioning in your server room has failed. What do you do?
   answer: |-
@@ -58,8 +58,8 @@
       unavailable at this current time.
     - Monitor Devices temperatures.
   years:
-    - 2018:
-        - AGM
+    2018:
+      - AGM
 
 - question: |-
     Order these protocols in terms of transfer speed, high to low.
@@ -71,8 +71,8 @@
     - QSFP+
   answer: ''
   years:
-    - 2018:
-        - AGM
+    2018:
+      - AGM
 
 - question: What is the UUID of a disk, and why would it be useful?
   answer: |-
@@ -80,8 +80,8 @@
    - This is useful because it can be used to identify a device independent from
      its mount point or device name.
   years:
-    - 2018:
-        - AGM
+    2018:
+      - AGM
 
 - question: What is an IP-KVM? Why should you use one?
   answer: |-
@@ -90,16 +90,16 @@
     - You should use one because you can remotely access both computers and vm's
       simultaneously
   years:
-    - 2018:
-        - AGM
+    2018:
+      - AGM
 
 - question: What is a PERC? What sort of server would you find a PERC in?
   answer: |-
     - A PERC (PowerEdge RAID Controller) is a series of disk array controllers.
     - You would find these on a Dell PowerEdge Server.
   years:
-    - 2018:
-        - AGM
+    2018:
+      - AGM
 
 - question: >-
     ECC memory is used in all Redbrick servers as standard. What is an advantage
@@ -108,6 +108,6 @@
     Error Correction Code memory protects against data corruption by
     automatically detecting and correcting memory errors.
   years:
-    - 2018:
-        - AGM
+    2018:
+      - AGM
 ...

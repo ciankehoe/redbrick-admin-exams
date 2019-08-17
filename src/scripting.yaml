@@ -50,7 +50,6 @@
     2017:
       - AGM
 
-
 - question: >-
     Write a script to scan all users' web directories for world editable files.
     Change their permissions to the correct permissions and email the user
@@ -74,7 +73,12 @@
     (echo "The best kind of errors, are the ones you can't see :)" && \
     python3 ThIsfiLEdoEsNTexISt.py) 2> /dev/null
     ```
+    ```bash
+    figlet DONGS
+    ```
   years:
+    2013:
+      - AGM
     2017:
       - AGM
     2018:
@@ -88,4 +92,104 @@
   years:
     2018:
       - AGM
-...
+
+- question: >-
+    We are replacing tcsh because it is shit. Find all users with tcsh, and
+    change their shell to bash. Email the user to tell them of the change
+  answer: |-
+    ```bash
+    #!/bin/bash
+
+    tcshusers=$(getent passwd | grep tcsh | cut -d: -f 1)
+    for user in $tcshusers
+    do
+       chsh $user -s /bin/bash
+       echo "We changed your shell" | mail -s "chsh" "$user@redbrick.dcu.ie"
+    done
+    ```
+  years:
+    2013:
+      - AGM
+
+- question: >-
+    It has come to our attention that a number of users have been storing out of
+    date lecture notes on their webspace. We have been provided with a copy of
+    each of the files. Scan /webtree for any copies of these files and if they
+    are world readable and not password protected email admins if one is found.
+    (You can ignore users home directories for this question.)
+  answer: |-
+    ```python
+    import hashlib
+    import smtplib
+    import subprocess
+    from email.mime.text import MIMEText
+
+    # Many enhancements could be made to this, but It is at least correct.
+    # This solution assumes that we cannot take into account the file extension.
+    # get a list of all the lecture files.
+    # This assumes they are in "./files"
+    findoutput = subprocess.check_output(["find", "./files", "-type", "f"])
+    lecfiles = findoutput.split("\n")[:-1]
+
+    # md5 hashes the files and puts these hashes into a list
+    lecture_md5s = []
+    for f in lecfiles:
+        lecture_md5s.append(hashlib.md5(open(f, "rb").read()).hexdigest())
+
+    # get a list of all world-readable files from /webtree
+    findoutput = subprocess.check_output(
+        ["find", "/webtree", "-type", "f", "-perm", "/o+r"]
+    )
+    webtreefiles = findoutput.split("\n")[:-1]
+
+    # Make a dictionary of file paths to MD5 sums of the world-readable files
+    # of /webtree
+    webtree_dict = {}
+    for f in webtreefiles:
+        webtree_dict[f] = hashlib.md5(open(f, "rb").read()).hexdigest()
+
+    violations = []
+    for f, md5 in webtree_dict.iteritems():
+        if md5 in lecture_md5s:
+            violations.append(md5 + " " + f)
+
+    violations_string = "\n".join(violations)
+    msg = MIMEText(violations_string)
+    msg["subject"] = "world-readable lecture notes"
+    msg["from"] = "notesbot"
+    msg["to"] = "gw@redbrick.dcu.ie"
+
+    s = smtplib.SMTP("localhost")
+    s.sendmail("notesbot", "gw@redbrick.dcu.ie", msg)
+    s.quit()
+    ```
+  years:
+    2013:
+      - AGM
+
+- question: >-
+    We believe that a number of users are abusing redbrick services.
+    Specifically they are running programs that are not allowed. Write a script
+    that takes a list of usernames as an argument and will detect if they are
+    running any of these programs. If you see the same user running banned
+    programs more than 3 times automatically change their shell to disusered.
+    Email admins to inform us of the users poor choices. (You may choose which
+    programs are banned.)
+  answer: |-
+    ```bash
+    #!/bin/bash
+    userlist=$1
+    bannedprocs="ssh|mutt|vim"
+    email="banned users were:\n\n"
+    for user in $userlist; do
+       numprocs=$(pgrep -u $user -c $bannedprocs"")
+       if [ $numprocs -gt 3 ]; then
+          chsh $user -s /usr/local/shells/disusered
+          email="$email $user"
+       fi
+    done
+    echo "$email" | mail -s "people got banned" admins@redbrick.dcu.ie
+    ```
+  years:
+    2013:
+      - AGM

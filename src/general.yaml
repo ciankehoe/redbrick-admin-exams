@@ -1,0 +1,116 @@
+---
+- question: 'What versions of ubuntu do we run on redbrick and why?'
+  answer: |-
+    - An LTS on a general server, because it is supported 5 years from release
+    - The Latest LTS on the development server, so the latest dev tools are
+      available
+  years:
+    2013:
+      - AGM
+
+- question: What does fail2ban do and why does redbrick use it?
+  answer: |-
+    - Fail2Ban scans logs and bans IPs that have frequent password failures.
+    - Redbrick uses it to prevent people bruteforcing user logins.
+  years:
+    2013:
+      - AGM
+
+- question: What temperature should the server room be kept at?
+  answer: 16 Degrees Centigrade
+  years:
+    2013:
+      - AGM
+
+- question: |-
+    What does redbrick use the following for?
+      - Nagios
+      - Lightweight Directory Access Protocol, or LDAP
+      - Exim
+      - Dirvish
+      - Munin
+  answer: |-
+    Nagios: making sure services are running on our machines
+    LDAP: Authenticating users over various machines
+    Exim: Mail Transfer Agent
+    Dirvish: Backups
+    Munin: Graphing shit
+  years:
+    2013:
+      - AGM
+
+- question: >-
+    Why does catting a binary screw up your shell? How do you fix this?
+  answer: |-
+    - Catting a binary spits out control characters that change your shell
+      settings
+    - the "reset" command
+  years:
+    2013:
+      - AGM
+
+- question: How do you create a compressed tar archive? Give an example command.
+  answer: '`tar -cvzf balls.tar.gz /path/to/compress`'
+  years:
+    2013:
+      - AGM
+
+- question: What is strace for?
+  answer: Allowing you to see what system calls a program is making
+  years:
+    2013:
+      - AGM
+
+- question: >-
+    What's a nice value. Tell me what the rules of changing them are for users
+    and for root
+  answer: |-
+    - process priority
+    - users can only raise them
+    - root can raise and lower them
+  years:
+    2013:
+      - AGM
+
+- question: What does cron allow you to do? How do you edit it?
+  answer: |-
+    - Schedule processes to run at certain times
+    - `crontab -e`
+  years:
+    2013:
+      - AGM
+
+- question: >-
+    Tell me what command you would use to create a ssh tunnel from port 1010 on
+    your local host to port 2020 on morpheus, using azazel as your forwarder.
+    Why might you need to use an ssh tunnel in general?
+  answer: |-
+    - `ssh -L 1010:morpheus.redbrick,dcu.ie:2020 user@azazel.redbrick.dcu.ie`
+    - to access a blocked port
+  years:
+    2013:
+      - AGM
+
+- question: How would you search for manpages? 2 ways please.
+  answer: |-
+    man -k
+    apropos
+  years:
+    2013:
+      - AGM
+
+- question: >-
+    What signal would you send a process to terminate it gracefully? How would
+    you do this?
+  answer: |-
+    `SIGTERM`
+    `kill`
+  years:
+    2013:
+      - AGM
+
+- question: What does DNS do?
+  answer: Maps hostnames to IP addresses
+  years:
+    2013:
+      - AGM

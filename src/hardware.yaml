@@ -7,21 +7,21 @@
 
 - question: >-
     You have 5 2TB drives in a RAID 6 array. Give a short explanation of what
-    this means, and calculate how much storage you will have available for use in
-    this situation.
+    this means, and calculate how much storage you will have available for use
+    in this situation.
   answer: |-
-   - 5 2TB drive in RAID 6
-     ```
-     - - - p q
-     - - p q -
-     - p q - -
-     p q - - -
-     ```
-   - This means your have dual parity. You have (essentially) 2 dual parity
-     disks distributed across many disks (in this case 5). This means 2 disks
-     can fail in your setup and you can still replace them using the parities
-     efficiently.
-   - Out of a possible 20TB, 18TB is available for storage.
+    - 5 2TB drive in RAID 6
+      ```
+      - - - p q
+      - - p q -
+      - p q - -
+      p q - - -
+      ```
+    - This means your have dual parity. You have (essentially) 2 dual parity
+      disks distributed across many disks (in this case 5). This means 2 disks
+      can fail in your setup and you can still replace them using the parities
+      efficiently.
+    - Out of a possible 20TB, 18TB is available for storage.
   years:
     2018:
       - AGM
@@ -34,6 +34,8 @@
     - You should mount this in a rack enclosure??
   years:
     2018:
+      - AGM
+    2013:
       - AGM
 
 - question: What is DAS? Does Redbrick have any DAS and if so, where?
@@ -76,9 +78,9 @@
 
 - question: What is the UUID of a disk, and why would it be useful?
   answer: |-
-   - The UUID of a disk is it's Universally Unique Identifier.
-   - This is useful because it can be used to identify a device independent from
-     its mount point or device name.
+    - The UUID of a disk is it's Universally Unique Identifier.
+    - This is useful because it can be used to identify a device independent from
+      its mount point or device name.
   years:
     2018:
       - AGM
@@ -91,6 +93,8 @@
       simultaneously
   years:
     2018:
+      - AGM
+    2013:
       - AGM
 
 - question: What is a PERC? What sort of server would you find a PERC in?
@@ -110,4 +114,38 @@
   years:
     2018:
       - AGM
-...
+
+- question: Explain RAID 0, 1 and 5
+  answer: |-
+    - RAID0: improved performance but no redundancy. more disks=higher risk of
+      failure.
+    - RAID1: data written identically to two drives, array can tolerate 1 drive
+      dying.
+    - RAID5: Needs all drives but 1 to work to operate, can tolerate 1 drive
+      dying.
+  years:
+    2013:
+      - AGM
+
+- question: Why is a management card in a server useful?
+  answer: To be able to remotely manage just that server
+  years:
+    2013:
+      - AGM
+
+- question: What are 2 benefits of SAS over SATA?
+  answer: |-
+    - Faster transfer speed
+    - longer cables possible
+  years:
+    2013:
+      - AGM
+
+- question: What does SAN stand for? Explain a bit
+  answer: |-
+    - Storage Attached Network
+    - Attach storage devices to servers so they look like they're attached
+      directly
+  years:
+    2013:
+      - AGM

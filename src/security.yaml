@@ -30,7 +30,7 @@
     2017:
       - AGM
 
-- question: >-
+- question: |-
     A user has launched a new website for another society. They type `ls -l` and
     the following is output;
     ```bash
@@ -64,8 +64,8 @@
       - AGM
 
 - question: >-
-    What is wrong with the following?
-    `mysql -u root -h mysql.internal -p=ThisIsTheRootPassword redbrickdb`
+    What is wrong with the following? `mysql -u root -h mysql.internal
+    -p=ThisIsTheRootPassword redbrickdb`
   answer: >-
     You are passing the Root Password to the console in plain text. This can
     show up in logs, history, you name it.
@@ -76,8 +76,8 @@
       - AGM
 
 - question: >-
-    You see a massive spike in traffic from a pile of Chinese IP addresses.
-    What do you do?
+    You see a massive spike in traffic from a pile of Chinese IP addresses. What
+    do you do?
   answer: >-
     Ban Chinese IP's via subnet with iptables rules. There's lots of chinese ip
     adress space  youll need a large subnet
@@ -166,9 +166,9 @@
 - question: >-
     Name 3 things you would do to secure a newly-installed Ubuntu 16.04 server.
   answer: |-
-   - Disable Login as Root.
-   - Set up SSH key login.
-   - Set up fail2ban with a sshd jail.
+    - Disable Login as Root.
+    - Set up SSH key login.
+    - Set up fail2ban with a sshd jail.
   years:
     2018:
       - AGM
@@ -195,4 +195,3 @@
   years:
     2018:
       - AGM
-...

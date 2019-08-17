@@ -1,8 +1,8 @@
 ---
 - question: 'What is `systemd`? What would be considered an alternative?'
   answer: >-
-    systemd is a system and service manager.
-    System-V (SysV) is considered an alternative
+    systemd is a system and service manager. System-V (SysV) is considered an
+    alternative
   years:
     2018:
       - AGM
@@ -24,7 +24,7 @@
     2017:
       - AGM
 
-- question: "What is a `chroot`? Why would you use one?"
+- question: 'What is a `chroot`? Why would you use one?'
   answer: |-
     - A `chroot` is an operation which changes the apparent root directory for
       the current running process and its subsequent children.
@@ -58,7 +58,6 @@
       - AGM
     2017:
       - AGM
-
 
 - question: >-
     Ubuntu 12.04 is a pile of shit and you need to upgrade to the latest LTS
@@ -154,7 +153,7 @@
     A user has somehow renamed a file to a name with strange unicode characters
     and you cannot delete that file by name. How would you go about deleting
     that file? Give commands with parameters.
-  answer: ""
+  answer: ''
   years:
     2017:
       - AGM
@@ -180,11 +179,130 @@
 - question: >-
     What is `fail2ban`? Is it a good idea to run it on your server, why?
   answer: |-
-   - `fail2ban` is a piece of software which protects against brute force
-     attacks.
-   - Self explanatory right? It bans attackers for X minutes for N attempts and
-     brute forcing the login in Y time.
+    - `fail2ban` is a piece of software which protects against brute force
+      attacks.
+    - Self explanatory right? It bans attackers for X minutes for N attempts and
+      brute forcing the login in Y time.
   years:
     2017:
       - AGM
-...
+
+- question: How do you check if a service is running?
+  answer: '%service  status`'
+  years:
+    2013:
+      - AGM
+
+- question: 'How would you search for a package on ubuntu? Give the command'
+  answer: '`apt-cache search`'
+  years:
+    2013:
+      - AGM
+
+- question: How do you determine what version of ubuntu is running?
+  answer: '`lsb_release -a`'
+  years:
+    2013:
+      - AGM
+
+- question: >-
+    What effect does the sticky bit have when set on a directory? What 2
+    directories are most commonly set with the sticky bit?
+  answer: |-
+    - files created therein can only be deleted by their owners, the owners of
+      that directory, or root
+    - `/tmp` and `/var/tmp`
+  years:
+    2013:
+      - AGM
+
+- question: >-
+    What does setting the setuid bit of an executable do? name a file that has
+    this set.
+  answer: |-
+    - Causes that executable to be run as it's owner
+    - `/usr/bin/passwd`
+  years:
+    2013:
+      - AGM
+
+- question: >-
+    What does Upstart (sometimes) do? What does it replace on some systems?
+  answer: |-
+    - Starts processes on boot
+    - init
+  years:
+    2013:
+      - AGM
+
+- question: >-
+    You're trying to back up mysql, but mysqldump fails because of broken tables
+    or the moon not being in the correct phase or somesuch shite, How do you
+    make a backup in spite of this?
+  answer: '`tar /var/lib/mysql`'
+  years:
+    2013:
+      - AGM
+
+- question: How do you check uptime? 2 ways please
+  answer: |-
+    - the `uptime` command
+    - `cat /proc/uptime`
+  years:
+    2013:
+      - AGM
+
+- question: >-
+    What are three advantages of installing packages from a package manager
+    rather than building from source. What 2 commands do you use to keep
+    packages up to date?
+  answer: |-
+    - Any three of:
+      - Faster
+      - They are updated automatically
+      - They've been tested with ubuntu to some degree
+      - dependencies are managed
+    - `apt-get update`
+    - `apt-get upgrade`
+    - or whatever for some other packaging system
+  years:
+    2013:
+      - AGM
+
+- question: What's a CVE database?
+  answer: database of information security vulnerabilites?(
+  years:
+    2013:
+      - AGM
+
+- question: >-
+    What would you use to check how much free space is on the system? Also, the
+    command to check how much is used. What does the -h flag do for these
+    commands?
+  answer: |-
+    - df
+    - du
+    - makes it human-readable
+  years:
+    2013:
+      - AGM
+
+- question: |-
+    You've just written a python script and made it executable, but when
+    you try to run it, this error comes up:
+    ```
+    import: unable to open X server `' @ error/import.c/ImportImageCommand/366.
+    ```
+    What is most likely causing this? How do you fix it
+  answer: |-
+    - script is executing as a shell script and not a python script
+    - add `#!/usr/bin/env python` as the first line of the script"
+  years:
+    2013:
+      - AGM
+
+- question: What command lets you list all running processes?
+  answer: '`ps aux`'
+  years:
+    2013:
+      - AGM

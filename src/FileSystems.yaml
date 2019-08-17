@@ -12,10 +12,10 @@
 
 - question: 'What does RAID stand for?'
   answer: >-
-    RAID (Redundant Array of Independent Disks) is a data storage
-    virtualisation technology that combines many physical disk drive components
-    into one or more logical units for the purposes of data redundancy,
-    performance improvement, or both.
+    RAID (Redundant Array of Independent Disks) is a data storage virtualisation
+    technology that combines many physical disk drive components into one or
+    more logical units for the purposes of data redundancy, performance
+    improvement, or both.
   years:
     2017:
       - AGM
@@ -170,6 +170,8 @@
   years:
     2018:
       - AGM
+    2013:
+      - AGM
 
 - question: 'Why does a user’s public_html directory have the mode lrwxrwxrwx?'
   answer: 'Because it is a symbolic link'
@@ -210,8 +212,8 @@
 
 - question: 'What are /etc/mtab and /etc/fstab used for?'
   answer: |-
-   - `/etc/mtab` is a list of currently mounted filesystems.
-   - `/etc/fstab` is a list of filesystems to be mounted at boot time.
+    - `/etc/mtab` is a list of currently mounted filesystems.
+    - `/etc/fstab` is a list of filesystems to be mounted at boot time.
   years:
     2018:
       - AGM
@@ -265,4 +267,82 @@
   years:
     2018:
       - AGM
-...
+
+- question: What is in `/etc/mtab`? What command would you use to display it?
+  answer: |-
+    all currently mounted filesystems
+    `mount`
+  years:
+    2013:
+      - AGM
+
+- question: >-
+    `192.168.0.24:/storage
+    /storage  nfs     nosuid,nodev,soft,intr,rw,rsize=65536,wsize=65536 0  0`
+    What file is this from? Explain what it means.
+  answer: |-
+    - `/etc/fstab`
+    - file system (mount `/storage` located at that IP)
+    - mount point (put it at `/storage` on this machine's file system)
+    - filesystem type (it is a network file system)
+    - Options (must explain at least one to get the mark)
+      - nosuid=block operation of suid bits
+      - nodev=don't interpret block special devices
+      - soft=for nfs, return error if server doesn't respond
+      - intr=allows nfs requests to be interrupted
+      - rw=read/write
+      - rsize=max size of read
+      - wsize=max size of write
+    - Dump freqency (never archive this partition)
+    - pass number (don't fsck with this at boot)
+  years:
+    2013:
+      - AGM
+
+- question: |-
+    What are the following?:
+      1. ctime
+      1. atime
+      1. mtime
+  answer: |-
+    - ctime: time of last change
+    - atime: time of last access
+    - mtime: time of last modification
+  years:
+    2013:
+      - AGM
+
+- question: "What is `/proc` for? what's `/etc` for?"
+  answer: |-
+    - `/proc` - a virtual filesystem which is an interface to interact with the
+      running kernel
+    - `/etc` - config files
+  years:
+    2013:
+      - AGM
+
+- question: >-
+    Name three different filesystems (not different versions of fat) and tell me
+    a feature of each?
+  answer: |-
+    - `ext3/4` - journaling file system, default in ubuntu
+    - `nfs` - network file system, works over network
+    - `reiserfs` - kills your wife
+    - `ntfs` - Windows primarily
+  years:
+    2013:
+      - AGM
+
+- question: How would you check a disk for errors?
+  answer: fsck
+  years:
+    2013:
+      - AGM
+
+- question: What's the difference between hard and soft links?
+  answer: |-
+    - hard link: a link to a file with the same inode as the linked file
+    - soft link: a llink to another file path on the filesystem
+  years:
+    2013:
+      - AGM

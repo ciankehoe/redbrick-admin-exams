@@ -45,4 +45,56 @@
   years:
     2018:
       - AGM
-...
+- question: |-
+    1. Create a user `ted` with a home directory of `/home/ted`
+    2. Make ted a member of `harry` group and give that group write access to
+       directory `/home/ted/shared`
+    3. Force the directory contents to be owned by the `harry` group.
+    4. The VM you are using has a free unformated partition. Format this partion
+       to be swap and make the VM mount the swap patition at startup.
+    5. Create a cron job that will synchronise the contents of /etc/ every night
+       to a remote server over ssh. (remote server details are provided on your
+       handout)
+  answer: |-
+    1. Create a user `ted` with a home directory of `/home/ted`
+    ```bash
+    adduser ted
+    ```
+    2. Make ted a member of `harry` group and give that group write access to
+       directory `/home/ted/shared`
+    ``` bash
+    groupadd harry
+    chown ted:harry /home/ted/shared
+    chmod g+w /home/ted/shared
+    ```
+    3. Force the directory contents to be owned by the `harry` group.
+    ```bash
+    chmod g+s /home/ted/shared
+    chown -R ted:harry /home/ted/shared
+    ```
+    4. The VM you are using has a free unformated partition. Format this partion
+       to be swap and make the VM mount the swap patition at startup.
+    ```bash
+    mkswap /dev/sda3
+    swapon /dev/sda3
+    ```
+    add the following to /etc/fstab:
+    ```
+    /dev/sda3 none swap sw 0 0
+    ```
+    5. Create a cron job that will synchronise the contents of /etc/ every night
+       to a remote server over ssh. (remote server details are provided on your
+       handout)
+    `crontab -e` add the following:
+    ```cron
+    0 0 * * * rsync -avz -e ssh /etc user@backup:/home/user/backup
+    ```
+    make ssh keys `ssh-keygen -b 2048 -f /path/to/sshkeys`
+    copy the public part to the backup server `scp ./key.pub backup:/home/user/`
+    ssh to backup server and add the public key into `~/.ssh/authorized_hosts`
+    ```bash
+    cat key.pub >> ~/.ssh/authorized_hosts
+    ```
+  years:
+    2013:
+      - AGM

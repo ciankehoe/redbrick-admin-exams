@@ -269,7 +269,7 @@
 - question: What is a Virtual Private Network? How does it offer security?
   answer: >-
     VPN - enables a remote computer to communicate with a network as if it were
-    on that network. It provides security through encryption(2)
+    on that network. It provides security through encryption
   years:
     2013:
       - AGM

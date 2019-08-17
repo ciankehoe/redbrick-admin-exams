@@ -16,10 +16,17 @@ class Question:
 
     def __init__(self, question: str, answer: str):
         self.question: str = question
-        self.answer: str = answer
+        self.answer: str = str(answer)
 
     def __str__(self) -> str:
-        return f"1. {self.question}\n\n{self.answer}\n"
+        question = f"1. {self.question}"
+        if not self.answer or self.answer == "":
+            return question
+        answer_arr = str(self.answer).split("\n")
+        if len(answer_arr) == 1:
+            return f"{question}\n\n   answer: {answer_arr[0]}"
+        answer = "\n".join(f"     {line}" for line in answer_arr)
+        return f"{question}\n\n   answer:\n\n{answer}"
 
 
 class Topic:
@@ -30,8 +37,10 @@ class Topic:
         self.questions: List[Question] = questions
 
     def __str__(self) -> str:
-        questions = "\n".join(str(question) for question in self.questions)
-        return f"## {self.title}\n\n{questions}"
+        if not self.questions:
+            return ""
+        questions = "\n\n".join(str(question) for question in self.questions)
+        return f"\n## {self.title}\n\n{questions}"
 
 
 def load_topic(topic_path: str) -> List[dict]:
@@ -103,6 +112,7 @@ def compile_exams(src) -> Dict[str, List[Topic]]:
 def save_exam(name: str, exam: str):
     """save exam to disk"""
     logger = get_logger("save_exam")
+    # using sets to diff the two isnt the best as it screws up whitespace
     if path.exists(name) and (
         set(open(name).read().split("\n")) == set(exam.split("\n"))
     ):

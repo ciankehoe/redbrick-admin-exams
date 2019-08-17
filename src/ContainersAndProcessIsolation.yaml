@@ -27,7 +27,7 @@
 - question: >-
     When running a Docker container, how would you bind port 22000 on the host
     to port 80 of the container?
-  answer: docker run -d --name app -p 22000:80 my/app
+  answer: '`docker run -d --name app -p 22000:80 my/app`'
   years:
     2018:
       - AGM
@@ -35,7 +35,7 @@
 - question: >-
     What command would you use to download a Docker image from a registy? Give
     an example usage of this command.
-  answer: docker pull hello-world
+  answer: '`docker pull hello-world`'
   years:
     2018:
       - AGM
@@ -81,7 +81,7 @@
       - AGM
 
 - question: What command would you use to delete unused Docker images & volumes?
-  answer: docker system prune -a -f
+  answer: '`docker system prune -a -f`'
   years:
     2018:
       - AGM

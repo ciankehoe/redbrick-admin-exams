@@ -30,11 +30,11 @@
       - Dirvish
       - Munin
   answer: |-
-    Nagios: making sure services are running on our machines
-    LDAP: Authenticating users over various machines
-    Exim: Mail Transfer Agent
-    Dirvish: Backups
-    Munin: Graphing shit
+    - Nagios: making sure services are running on our machines
+    - LDAP: Authenticating users over various machines
+    - Exim: Mail Transfer Agent
+    - Dirvish: Backups
+    - Munin: Graphing shit
   years:
     2013:
       - AGM
@@ -93,8 +93,8 @@
 
 - question: How would you search for manpages? 2 ways please.
   answer: |-
-    man -k
-    apropos
+    - man -k
+    - apropos
   years:
     2013:
       - AGM
@@ -103,8 +103,8 @@
     What signal would you send a process to terminate it gracefully? How would
     you do this?
   answer: |-
-    `SIGTERM`
-    `kill`
+    - `SIGTERM`
+    - `kill`
   years:
     2013:
       - AGM

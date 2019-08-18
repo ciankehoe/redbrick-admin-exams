@@ -7,18 +7,18 @@
     yet committed to the file system's main part by recording the intentions of
     such changes in a data structure known as a "journal"
   years:
-    - 2017:
-        - AGM
+    2017:
+      - AGM
 
 - question: 'What does RAID stand for?'
   answer: >-
-    RAID (Redundant Array of Independent Disks) is a data storage
-    virtualisation technology that combines many physical disk drive components
-    into one or more logical units for the purposes of data redundancy,
-    performance improvement, or both.
+    RAID (Redundant Array of Independent Disks) is a data storage virtualisation
+    technology that combines many physical disk drive components into one or
+    more logical units for the purposes of data redundancy, performance
+    improvement, or both.
   years:
-    - 2017:
-        - AGM
+    2017:
+      - AGM
 
 - question: >-
     Describe the structure of 3 different RAID variations, giving advantages and
@@ -48,8 +48,8 @@
       - Advantages: Very high performance. Fault tolerance.
       - Disadvantages: Lower usable capacity/High cost. Limited scalability.
   years:
-    - 2017:
-        - AGM
+    2017:
+      - AGM
 
 - question: 'What is a sticky bit? How and why would you set it on a file?'
   answer: >-
@@ -57,8 +57,8 @@
     file or directory to modify, rename or delete the concerned file or
     directory.
   years:
-    - 2017:
-        - AGM
+    2017:
+      - AGM
 
 - question: >-
     Name a non-RAID multi disk setup. Give an advantage and a disadvantage.
@@ -74,16 +74,16 @@
     - Disadvantage: `JBOD` does not offer redundancy unlike the RAID technology,
       and lacks fault tolerance.
   years:
-    - 2017:
-        - AGM
+    2017:
+      - AGM
 
 - question: >-
     What protocol(s) might you use to mount a file-system over a network? What
     one does Redbrick use?
   answer: 'NFS (ZFS on a Sunbox). NFS is what Redbrick uses.'
   years:
-    - 2017:
-        - AGM
+    2017:
+      - AGM
 
 - question: >-
     What are `fdisk` and `gdisk`? What situation would you use each in?
@@ -94,26 +94,26 @@
     - `gdisk` is an interactive GUID tool which allows users to create and
       manipulate disk partition tables too.
   years:
-    - 2017:
-        - AGM
+    2017:
+      - AGM
 
 - question: >-
     What file would you modify to mount a file-system to the mount point
     `/webtree/` on boot?
   answer: '`/etc/fstab`'
   years:
-    - 2017:
-        - AGM
+    2017:
+      - AGM
 
 - question: 'What does the command `sync` do? When should it be used?'
   answer: >-
     This forces everything in temporary memory storage to be written to a
     persistent file storage (like a disk) so none of the data is lost.
   years:
-    - 2017:
-        - AGM
-    - 2018:
-        - AGM
+    2017:
+      - AGM
+    2018:
+      - AGM
 
 - question: 'What are the pros and cons of Hardware RAID & Software RAID.'
   answer: >-
@@ -134,8 +134,8 @@
         - Often OS specific.
         - Performance hit if you’re using more complex RAID configurations.
   years:
-    - 2017:
-        - AGM
+    2017:
+      - AGM
 
 - question: 'What is a `UID` and a `GID`? Why are they useful?'
   answer: |-
@@ -144,8 +144,8 @@
     - `GID` could be of two types, one is a primary group and the other is a
       secondary group.
   years:
-    - 2017:
-        - AGM
+    2017:
+      - AGM
 
 - question: >-
     What are symlinks? Give two ways in which they differ from hardlinks.
@@ -159,8 +159,8 @@
       real copy of a hard linkis deleted the link will work, because it accesses
       the underlying data the real copy was accessing.
   years:
-    - 2018:
-        - AGM
+    2018:
+      - AGM
 
 - question: 'What is an inode? How would you find one?'
   answer: |-
@@ -168,27 +168,29 @@
       important information pertaining to files within a file system.
     - `ls -i /home/mctastic/public_html/index.html`
   years:
-    - 2018:
-        - AGM
+    2018:
+      - AGM
+    2013:
+      - AGM
 
 - question: 'Why does a user’s public_html directory have the mode lrwxrwxrwx?'
   answer: 'Because it is a symbolic link'
   years:
-    - 2018:
-        - AGM
+    2018:
+      - AGM
 
 - question: >-
     How would you determine which filesystems are currently mounted to a system?
   answer: 'Use either `cat /etc/fstab` or `mount`'
   years:
-    - 2018:
-        - AGM
+    2018:
+      - AGM
 
 - question: 'Express the following in octal format: drwxrw-rw-'
   answer: 766
   years:
-    - 2018:
-        - AGM
+    2018:
+      - AGM
 
 - question: >-
     How would you mount the volume `/dev/sda3` read-only to `/redbrick`?
@@ -196,8 +198,8 @@
     - `sudo mkdir /redbrick/eggs`
     - `sudo mount -o ro /dev/sda3 /redbrick/eggs`
   years:
-    - 2018:
-        - AGM
+    2018:
+      - AGM
 
 - question: 'ext4 is a journaling file system. What is meant by this?'
   answer: >-
@@ -205,16 +207,16 @@
     yet committed to the file system's main part by recording the intentions of
     such changes in a data structure known as a `journal`
   years:
-    - 2018:
-        - AGM
+    2018:
+      - AGM
 
 - question: 'What are /etc/mtab and /etc/fstab used for?'
   answer: |-
-   - `/etc/mtab` is a list of currently mounted filesystems.
-   - `/etc/fstab` is a list of filesystems to be mounted at boot time.
+    - `/etc/mtab` is a list of currently mounted filesystems.
+    - `/etc/fstab` is a list of filesystems to be mounted at boot time.
   years:
-    - 2018:
-        - AGM
+    2018:
+      - AGM
 
 - question: 'What is the difference between MBR and GPT?'
   answer: |-
@@ -223,8 +225,8 @@
     - GUID Partition Table is also a parition scheme which defines primary
       partitions only. The reason for this is because it has no boot record.
   years:
-    - 2018:
-        - AGM
+    2018:
+      - AGM
 
 - question: >-
     What are `fdisk` and `gdisk`, and in what situations would you use each?
@@ -233,8 +235,8 @@
     - `gdisk` - acts like `fdisk` but for `GPT`.
     - you would use either for partitioning the hard disk.
   years:
-    - 2018:
-        - AGM
+    2018:
+      - AGM
 
 - question: |-
     Briefly explain the following;
@@ -263,6 +265,84 @@
         file or directory to modify, rename or delete the concerned file or
         directory.
   years:
-    - 2018:
-        - AGM
-...
+    2018:
+      - AGM
+
+- question: What is in `/etc/mtab`? What command would you use to display it?
+  answer: |-
+    all currently mounted filesystems
+    `mount`
+  years:
+    2013:
+      - AGM
+
+- question: >-
+    `192.168.0.24:/storage
+    /storage  nfs     nosuid,nodev,soft,intr,rw,rsize=65536,wsize=65536 0  0`
+    What file is this from? Explain what it means.
+  answer: |-
+    - `/etc/fstab`
+    - file system (mount `/storage` located at that IP)
+    - mount point (put it at `/storage` on this machine's file system)
+    - filesystem type (it is a network file system)
+    - Options (must explain at least one to get the mark)
+      - nosuid=block operation of suid bits
+      - nodev=don't interpret block special devices
+      - soft=for nfs, return error if server doesn't respond
+      - intr=allows nfs requests to be interrupted
+      - rw=read/write
+      - rsize=max size of read
+      - wsize=max size of write
+    - Dump freqency (never archive this partition)
+    - pass number (don't fsck with this at boot)
+  years:
+    2013:
+      - AGM
+
+- question: |-
+    What are the following?:
+       1. ctime
+       1. atime
+       1. mtime
+  answer: |-
+    - ctime: time of last change
+    - atime: time of last access
+    - mtime: time of last modification
+  years:
+    2013:
+      - AGM
+
+- question: "What is `/proc` for? what's `/etc` for?"
+  answer: |-
+    - `/proc` - a virtual filesystem which is an interface to interact with the
+      running kernel
+    - `/etc` - config files
+  years:
+    2013:
+      - AGM
+
+- question: >-
+    Name three different filesystems (not different versions of fat) and tell me
+    a feature of each?
+  answer: |-
+    - `ext3/4` - journaling file system, default in ubuntu
+    - `nfs` - network file system, works over network
+    - `reiserfs` - kills your wife
+    - `ntfs` - Windows primarily
+  years:
+    2013:
+      - AGM
+
+- question: How would you check a disk for errors?
+  answer: fsck
+  years:
+    2013:
+      - AGM
+
+- question: What's the difference between hard and soft links?
+  answer: |-
+    - hard link: a link to a file with the same inode as the linked file
+    - soft link: a llink to another file path on the filesystem
+  years:
+    2013:
+      - AGM

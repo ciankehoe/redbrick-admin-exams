@@ -7,16 +7,16 @@ https://redbrick.dcu.ie/help/exams
 ## Format of the data
 
 Rather then having all exams stored as markdown files for each year they are
-stored as yaml broken down by section. This is to try to limit the repotition
+stored as yaml broken down by section. This is to try to limit the repetition
 that comes with question reuse.
 
-- All files are stored in `src`, each file reprisents a section.
+- All files are stored in `src`, each file represents a section.
 - Each file contains an array of questions.
 - A Question has 3 fields, `question`, `answer`, and `years`.
   - `question` and `answer` are markdown strings.
-  - `years` is an array of years,
+  - `years` is an dictionary of years,
     - Each year is a `key` of the year, containing an array of strings to
-      reprisent what exam the question was used in
+      represent what exam the question was used in
 
 ### Example
 
@@ -40,11 +40,11 @@ that comes with question reuse.
     $email" | sendmail -t $var
     ```
   years:
-    - 2017:
-        - AGM
-        - EGM-1
-    - 2018:
-        - AGM
+    2017:
+      - AGM
+      - EGM-1
+    2018:
+      - AGM
 ````
 
 ## Contributing

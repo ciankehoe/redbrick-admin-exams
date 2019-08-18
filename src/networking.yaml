@@ -5,54 +5,53 @@
     the SFP port of a network switch and connects to Fibre Channel and Gigabit
     Ethernet (GbE) optical fiber cables at the other end.
   years:
-    - 2017:
-        - AGM
+    2017:
+      - AGM
 
 - question: >-
     Why do we only allow packets through our firewall on a select number of
     ports?
   answer: 'The less ports open the better.'
   years:
-    - 2017:
-        - AGM
+    2017:
+      - AGM
 
 - question: |-
     What ports do the following services typically use? What protocols do they
     use?
       - DNS
+      - HTTP
       - HTTPS
       - VNC
       - IRC
       - SMTP
   answer: |-
-    - DNS
-      - 53
-    - HTTPS
-      - 443
-    - VNC
-      - 5900+
-    - IRC
-      - 194
-    - SMTP
-      - 25
+    - DNS: 53
+    - HTTP: 80
+    - HTTPS: 443
+    - VNC: 5900+
+    - IRC: 194
+    - SMTP: 25
   years:
-    - 2018:
-        - AGM
+    2018:
+      - AGM
+    2013:
+      - AGM
 
 - question: >-
     No one can seem to connect to anything on Redbrick. Walk us through how you
   answer: ''
   years:
-    - 2017:
-        - AGM
+    2017:
+      - AGM
 
 - question: 'What is SNMP? What could SNMP be used for?'
   answer: |-
     - SNMP is the Simple Network Management Protocol
     - SNMP can be used to monitor different network devices.
   years:
-    - 2018:
-        - AGM
+    2018:
+      - AGM
 
 - question: >-
     People seem to be able to connect via IP but not via DNS. Name some tools
@@ -63,16 +62,16 @@
     - `tcptraceroute`
     - `ip addr show`
   years:
-    - 2017:
-        - AGM
+    2017:
+      - AGM
 
 - question: >-
     How would you go about looking at a config on one our switches or SRX
     (juniper or cisco)
   answer: ''
   years:
-    - 2017:
-        - AGM
+    2017:
+      - AGM
 
 - question: >-
     Give the syntax for adding an entry to DNS(bind9) with the following info
@@ -86,25 +85,25 @@
     pretty IN CNAME graphs.redbrick.dcu.ie
     ```
   years:
-    - 2017:
-        - AGM
+    2017:
+      - AGM
 
 - question: >-
     Explain briefly what happens when you type in `redbrick.dcu.ie` into a
     browser.
   answer: ''
   years:
-    - 2017:
-        - AGM
+    2017:
+      - AGM
 
 - question: 'When would you use `tcpdump`. Give an example of its syntax.'
   answer: |-
-     - You would use `tcpdump` when you wanted to view the contents of packets
-       on a network interface
-     - `tcpdump host azazel`
+    - You would use `tcpdump` when you wanted to view the contents of packets
+      on a network interface
+    - `tcpdump host azazel`
   years:
-    - 2017:
-        - AGM
+    2017:
+      - AGM
 
 - question: 'What is a VLAN? What are they used for?'
   answer: >-
@@ -112,8 +111,8 @@
     switch ports that connect them. A VLAN allows several networks to work
     virtually as one LAN.
   years:
-    - 2017:
-        - AGM
+    2017:
+      - AGM
 
 - question: >-
     What is a virtual interface? What file would you modify to create one?
@@ -123,26 +122,26 @@
       controller.
     - `/etc/network/interfaces`
   years:
-    - 2017:
-        - AGM
+    2017:
+      - AGM
 
 - question: >-
     Write a DNS entry to bind the address `136.206.15.25` to
     `azazel.redbrick.dcu.ie`, assumining your $ORIGIN is defined as
     `redbrick.dcu.ie`.
   answer: |-
-   ```bind9
-   $TTL 604800 @ IN SOA azazel.redbrick.dcu.ie. root.redbrick.dcu.ie. ;
-      Serial 604800 ;
-      Refresh 86400 ;
-      Retry 2419200 ;
-      Expire 604800 ;
-      Negative Cache TTL ;
-    @ IN NS azazel.redbrick.dcu.ie. azazel IN A 136.206.15.25
-    ```
+    ```bind9
+    $TTL 604800 @ IN SOA azazel.redbrick.dcu.ie. root.redbrick.dcu.ie. ;
+       Serial 604800 ;
+       Refresh 86400 ;
+       Retry 2419200 ;
+       Expire 604800 ;
+       Negative Cache TTL ;
+     @ IN NS azazel.redbrick.dcu.ie. azazel IN A 136.206.15.25
+     ```
   years:
-    - 2018:
-        - AGM
+    2018:
+      - AGM
 
 - question: >-
     What does BGP stand for? What situations would it typically be used in?
@@ -151,8 +150,8 @@
     - Used as the routing protocol both between (external BGP) and within
       (internal BGP) ISP's
   years:
-    - 2018:
-        - AGM
+    2018:
+      - AGM
 
 - question: >-
     What command would you run on one of our Ubuntu 14.04 machines to get rid of
@@ -161,8 +160,8 @@
     - To release your current address - `sudo dhclient -r`
     - To request a new address - `sudo dhclient`
   years:
-    - 2018:
-        - AGM
+    2018:
+      - AGM
 
 - question: >-
     Redbrick owns 2x /24 of IPv4. What does this mean?
@@ -172,16 +171,16 @@
     - /24 is CIDR notation. It signifies there may be up to 254 hosts in both of
       these IPv4 blocks.
   years:
-    - 2018:
-        - AGM
+    2018:
+      - AGM
 
 - question: >-
     What file would you modify on a Ubuntu system to make changes to network
     interfaces persistent?
   answer: '`/etc/network/interfaces`'
   years:
-    - 2018:
-        - AGM
+    2018:
+      - AGM
 
 - question: >-
     We use Cisco and Juniper switches in Redbrick. How would you view the
@@ -191,18 +190,18 @@
     - show running-configuration
     - copy running-configuration startup-configuration
   years:
-    - 2018:
-        - AGM
+    2018:
+      - AGM
 
 - question: >-
     How many disparate networks exist within Redbrick? What are they all used
     for?
   answer: >-
-    Not sure, because RBVM isn't a thing right? So docs.redbrick.dcu.ie may
-    not be correct on current number, maybe it is I don't know.
+    Not sure, because RBVM isn't a thing right? So docs.redbrick.dcu.ie may not
+    be correct on current number, maybe it is I don't know.
   years:
-    - 2018:
-        - AGM
+    2018:
+      - AGM
 
 - question: >-
     You should always change the serial number when modifying DNS entries. What
@@ -215,6 +214,70 @@
     - If you don't update the serial number, the worker will continue to read
       the cached copy of the zone.
   years:
-    - 2018:
-        - AGM
-...
+    2018:
+      - AGM
+
+- question: >-
+    Explain Subnetting. What's the subnet mask of a /23? How many hosts per
+    subnet on it?
+  answer: |-
+    subnetting, allocating bits from the start of an IP address to act as the
+    network address and using the bits left to represent the subnet/hosts
+      - 255.255.254.0
+      - 510 or 2^9-2
+  years:
+    2013:
+      - AGM
+
+- question: Difference between TCP and UDP please
+  answer: |-
+    TCP - connection oriented, if connection is lost, server requests lost bit
+    UDP - connectionless, no guarantee your data is gonna get there
+  years:
+    2013:
+      - AGM
+
+- question: >-
+    What's a private IP address range? Give an example. What problem were these
+    introduced to solve?
+  answer: |-
+    - IP Address ranges that aren't routable over the global internet
+    - 192.168.0.0-192.168.255.255
+    - IPv4 exhaustion
+  years:
+    2013:
+      - AGM
+
+- question: What does NAT do?
+  answer: >-
+    It associates one or many (usually private) IPs with a single public IP
+  years:
+    2013:
+      - AGM
+
+- question: Explain, in 5 points, how DNS works
+  answer: |-
+    - You need a domain name's IP.
+    - You check the DNS cache
+    - if no joy, you ask the root dns nameserver
+    - if no joy, ask server for TLD of domain name e.g. ie nameserver
+    - repeat this for each bit of the domain name e.g. dcu.ie, rb.dcu.ie
+  years:
+    2013:
+      - AGM
+
+- question: What is a Virtual Private Network? How does it offer security?
+  answer: >-
+    VPN - enables a remote computer to communicate with a network as if it were
+    on that network. It provides security through encryption
+  years:
+    2013:
+      - AGM
+
+- question: What is port knocking?
+  answer: >-
+    Sending packets to a series of closed ports on a firewall that opens a
+    previously closed port
+  years:
+    2013:
+      - AGM

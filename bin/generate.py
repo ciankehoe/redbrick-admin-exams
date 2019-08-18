@@ -1,12 +1,14 @@
 #! /usr/bin/env python3
 """compile exam yaml in to markdown"""
 from argparse import ArgumentParser
+from difflib import Differ
 from glob import glob
 from logging import INFO, StreamHandler, getLogger
 from os import makedirs, path
 from re import findall
-from typing import Dict, List, Tuple
+from typing import Dict, List, Optional, Tuple
 
+from jinja2 import Template
 from structlog import configure, dev, get_logger, processors, stdlib
 from yaml import YAMLError, safe_load
 
@@ -14,33 +16,60 @@ from yaml import YAMLError, safe_load
 class Question:
     """A exam qeustion and its answer"""
 
-    def __init__(self, question: str, answer: str):
+    template = Template(
+        """1. {{ question }} {%- if mark is not none -%} ({{ mark }} marks){%- endif %}
+{% if multiline_question is defined-%}
+{{ multiline_question }}
+{%- endif %}
+{% if answer | length %}
+   Answer:{% if not answer_multiline %} {{ answer }}{% else %}
+{% filter indent(width=3) %}
+{{ answer }}
+{% endfilter %}
+{%- endif -%}
+{% endif %}"""
+    )
+
+    def __init__(self, question: str, answer: str, mark: int = None):
         self.question: str = question
         self.answer: str = str(answer)
+        self.mark: Optional[int] = mark
 
     def __str__(self) -> str:
-        question = f"1. {self.question}"
-        if not self.answer or self.answer == "":
-            return question
-        answer_arr = str(self.answer).split("\n")
-        if len(answer_arr) == 1:
-            return f"{question}\n\n   answer: {answer_arr[0]}"
-        answer = "\n".join(f"     {line}" for line in answer_arr)
-        return f"{question}\n\n   answer:\n\n{answer}"
+        if bool(self.question.count("\n")):
+            question_arr = self.question.split("\n")
+            question = question_arr.pop(0)
+            return self.template.render(
+                question=question,
+                answer=self.answer,
+                mark=self.mark,
+                multiline_question="\n".join(question_arr),
+                answer_multiline=bool(self.answer.count("\n")),
+            )
+        return self.template.render(
+            question=self.question,
+            answer=self.answer,
+            mark=self.mark,
+            answer_multiline=bool(self.answer.count("\n")),
+        )
 
 
 class Topic:
     """an exam topic made up multiple questions"""
+
+    template = Template(
+        """## {{title}}
+{% for question in questions %}
+{{ question }}
+{%- endfor -%}"""
+    )
 
     def __init__(self, title: str, questions: List[Question]):
         self.title: str = title
         self.questions: List[Question] = questions
 
     def __str__(self) -> str:
-        if not self.questions:
-            return ""
-        questions = "\n\n".join(str(question) for question in self.questions)
-        return f"\n## {self.title}\n\n{questions}"
+        return self.template.render(questions=self.questions, title=self.title)
 
 
 def load_topic(topic_path: str) -> List[dict]:
@@ -112,10 +141,7 @@ def compile_exams(src) -> Dict[str, List[Topic]]:
 def save_exam(name: str, exam: str):
     """save exam to disk"""
     logger = get_logger("save_exam")
-    # using sets to diff the two isnt the best as it screws up whitespace
-    if path.exists(name) and (
-        set(open(name).read().split("\n")) == set(exam.split("\n"))
-    ):
+    if path.exists(name) and Differ().compare(open(name).read(), exam):
         logger.info("skipping exam as no change", file=name)
         return
     with open(name, "w") as text_file:

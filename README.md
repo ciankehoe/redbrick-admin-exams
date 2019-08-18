@@ -4,6 +4,14 @@ An attempt to collect the answers to all the Redbrick Admin Exams. This make it
 easier for those in the future. Exams found at
 https://redbrick.dcu.ie/help/exams
 
+## Building exams
+
+To build up to date exams from the source run `make` from the route directory.
+Yaml docs will be read in from `src` directory and output to the `exam`
+directory.
+
+To setup dependencies you can run `make install`, **requires** python 3 and pip
+
 ## Format of the data
 
 Rather then having all exams stored as markdown files for each year they are

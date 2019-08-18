@@ -270,8 +270,8 @@
 
 - question: What is in `/etc/mtab`? What command would you use to display it?
   answer: |-
-    all currently mounted filesystems
-    `mount`
+    - all currently mounted filesystems
+    - `mount`
   years:
     2013:
       - AGM

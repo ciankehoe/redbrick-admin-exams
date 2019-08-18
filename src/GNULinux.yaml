@@ -188,7 +188,7 @@
       - AGM
 
 - question: How do you check if a service is running?
-  answer: '%service  status`'
+  answer: '`service  status`'
   years:
     2013:
       - AGM

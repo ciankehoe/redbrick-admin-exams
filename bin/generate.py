@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 """compile exam yaml in to markdown"""
 from argparse import ArgumentParser
-from difflib import Differ
+from difflib import SequenceMatcher
 from glob import glob
 from logging import INFO, StreamHandler, getLogger
 from os import makedirs, path
@@ -17,7 +17,7 @@ class Question:
     """A exam qeustion and its answer"""
 
     template = Template(
-        """1. {{ question }} {%- if mark is not none -%} ({{ mark }} marks){%- endif %}
+        """1. {{ question }} {%- if mark is not none %} **({{ mark }} marks)**{%- endif %}
 {% if multiline_question is defined-%}
 {{ multiline_question }}
 {%- endif %}
@@ -102,7 +102,11 @@ def parse_topic(topic: List[dict]) -> Dict[str, List[Question]]:
     """covert a raw dictionary to a dict mapping exams to a list of questions"""
     topics_exams: Dict[str, List[Question]] = {}
     for question_dict in topic:
-        question = Question(question_dict["question"], question_dict["answer"])
+        question = Question(
+            question_dict["question"],
+            question_dict["answer"],
+            question_dict["mark"] if "mark" in question_dict else None,
+        )
         for year, exams in question_dict["years"].items():
             for exam in exams:
                 exam_id = f"{year}-{exam}"
@@ -141,7 +145,14 @@ def compile_exams(src) -> Dict[str, List[Topic]]:
 def save_exam(name: str, exam: str):
     """save exam to disk"""
     logger = get_logger("save_exam")
-    if path.exists(name) and Differ().compare(open(name).read(), exam):
+
+    if (
+        path.exists(name)
+        and SequenceMatcher(
+            None, open(name).read().splitlines(), exam.splitlines()
+        ).real_quick_ratio()
+        != 1.0
+    ):
         logger.info("skipping exam as no change", file=name)
         return
     with open(name, "w") as text_file:

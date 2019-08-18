@@ -3,6 +3,7 @@
   answer: >-
     systemd is a system and service manager. System-V (SysV) is considered an
     alternative
+  mark: 2
   years:
     2018:
       - AGM
@@ -18,6 +19,7 @@
     - To find who is using it using `lsof | grep /media/whatever`
     - To kill that process use `kill -9 PID`
     - `umount -l` (I think, not very sure on this part)
+  mark: 4
   years:
     2018:
       - AGM
@@ -33,6 +35,7 @@
       - you can use it to simulate an specific environment in order to test
         some features
       - you can use it to create images of a system different from your main one
+  mark: 3
   years:
     2018:
       - AGM
@@ -53,6 +56,7 @@
     - They are sometimes patched by the package maintainer to fix distro
       specific bugs
     - `sudo apt-get update`
+  mark: 5
   years:
     2018:
       - AGM
@@ -82,6 +86,7 @@
     - `zgrep foo compressed_logs.gz`
     - `zcat compressed-logs.gz | zless`
     - `bzgrep foo compressed-logs.bz`
+  mark: 3
   years:
     2018:
       - AGM
@@ -93,6 +98,7 @@
     Logical volume management (LVM) is a form of storage virtualisation that
     offers system administrators a more flexible approach to managing disk
     storage space than traditional partitioning.
+  mark: 2
   years:
     2018:
       - AGM
@@ -154,6 +160,7 @@
     and you cannot delete that file by name. How would you go about deleting
     that file? Give commands with parameters.
   answer: ''
+  mark: 4
   years:
     2017:
       - AGM
@@ -164,6 +171,7 @@
   answer: >-
     I usually panic and hit `Ctrl+C` a bunch, then realise I need to type
     `reset`
+  mark: 2
   years:
     2017:
       - AGM
@@ -172,6 +180,7 @@
     You want to create a user to be used by a daemon. What do you set its shell
     to?
   answer: '`sudo adduser --shell /usr/sbin/nologindaemonUser`'
+  mark: 2
   years:
     2017:
       - AGM
@@ -183,6 +192,7 @@
       attacks.
     - Self explanatory right? It bans attackers for X minutes for N attempts and
       brute forcing the login in Y time.
+  mark: 2
   years:
     2017:
       - AGM

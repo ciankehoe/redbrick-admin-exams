@@ -106,3 +106,15 @@
   years:
     2013:
       - AGM
+
+- question: |-
+    1. Login with the details provided and install apache.
+    1. Serve some other page that isnt the default page.
+    1. setup fail2ban
+    1. add 2 users of your choice
+    1. enable one of these accounts to be able to use sudo
+  answer: ""
+  mark: 45
+  years:
+    2017:
+      - AGM

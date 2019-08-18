@@ -6,6 +6,7 @@
     A journaling file system is a file system that keeps track of changes not
     yet committed to the file system's main part by recording the intentions of
     such changes in a data structure known as a "journal"
+  mark: 2
   years:
     2017:
       - AGM
@@ -16,6 +17,7 @@
     technology that combines many physical disk drive components into one or
     more logical units for the purposes of data redundancy, performance
     improvement, or both.
+  mark: 2
   years:
     2017:
       - AGM
@@ -24,6 +26,7 @@
     Describe the structure of 3 different RAID variations, giving advantages and
     disadvantages for each. You may describe the structure in words, or with a
     diagram on the provided paper.
+  mark: 6
   answer: |-
     1. RAID 5
       - Description: Uses disk striping with parity where data and parity is
@@ -56,12 +59,14 @@
     Permission bit which when set permits only the owner or root user of the
     file or directory to modify, rename or delete the concerned file or
     directory.
+  mark: 2
   years:
     2017:
       - AGM
 
 - question: >-
     Name a non-RAID multi disk setup. Give an advantage and a disadvantage.
+  mark: 2
   answer: |-
     - `JBOD`
     - Description: It is a drive enclosure which is used as an accommodation for
@@ -81,6 +86,7 @@
     What protocol(s) might you use to mount a file-system over a network? What
     one does Redbrick use?
   answer: 'NFS (ZFS on a Sunbox). NFS is what Redbrick uses.'
+  mark: 3
   years:
     2017:
       - AGM
@@ -93,6 +99,7 @@
       partitions on the disk.
     - `gdisk` is an interactive GUID tool which allows users to create and
       manipulate disk partition tables too.
+  mark: 2
   years:
     2017:
       - AGM
@@ -101,6 +108,7 @@
     What file would you modify to mount a file-system to the mount point
     `/webtree/` on boot?
   answer: '`/etc/fstab`'
+  mark: 2
   years:
     2017:
       - AGM
@@ -109,6 +117,7 @@
   answer: >-
     This forces everything in temporary memory storage to be written to a
     persistent file storage (like a disk) so none of the data is lost.
+  mark: 1
   years:
     2017:
       - AGM
@@ -143,6 +152,7 @@
     - `GID`: Group ID
     - `GID` could be of two types, one is a primary group and the other is a
       secondary group.
+  mark: 3
   years:
     2017:
       - AGM

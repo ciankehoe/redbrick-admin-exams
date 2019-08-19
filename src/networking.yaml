@@ -4,6 +4,7 @@
     A Small Form-factor Pluggable (SFP) is a small transceiver that plugs into
     the SFP port of a network switch and connects to Fibre Channel and Gigabit
     Ethernet (GbE) optical fiber cables at the other end.
+  mark: 2
   years:
     2017:
       - AGM
@@ -12,6 +13,7 @@
     Why do we only allow packets through our firewall on a select number of
     ports?
   answer: 'The less ports open the better.'
+  mark: 2
   years:
     2017:
       - AGM
@@ -40,7 +42,9 @@
 
 - question: >-
     No one can seem to connect to anything on Redbrick. Walk us through how you
+    would go about trouble shooting this.
   answer: ''
+  mark: 2
   years:
     2017:
       - AGM
@@ -61,6 +65,7 @@
     - `dig`
     - `tcptraceroute`
     - `ip addr show`
+  mark: 4
   years:
     2017:
       - AGM
@@ -92,6 +97,7 @@
     Explain briefly what happens when you type in `redbrick.dcu.ie` into a
     browser.
   answer: ''
+  mark: 4
   years:
     2017:
       - AGM
@@ -101,6 +107,7 @@
     - You would use `tcpdump` when you wanted to view the contents of packets
       on a network interface
     - `tcpdump host azazel`
+  mark: 3
   years:
     2017:
       - AGM
@@ -110,6 +117,7 @@
     A VLAN (Virtual Local Access Network) is a set of end stations and the
     switch ports that connect them. A VLAN allows several networks to work
     virtually as one LAN.
+  mark: 2
   years:
     2017:
       - AGM

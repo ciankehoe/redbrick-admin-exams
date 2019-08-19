@@ -17,6 +17,7 @@
 
     $email" | sendmail -t $var
     ```
+  mark: 3
   years:
     2017:
       - AGM
@@ -34,6 +35,7 @@
     john --wordlist=/usr/share/wordlists/sqlmap.txt passwords.txt
     john --show passwords.txt
     ```
+  mark: 10
   years:
     2017:
       - AGM
@@ -46,6 +48,7 @@
     they need to change their password and that their php has been disabled. The
     script should also disable those users php if it access mysql.
   answer: ''
+  mark: 10
   years:
     2017:
       - AGM
@@ -55,6 +58,7 @@
     Change their permissions to the correct permissions and email the user
     telling them the file you changed and why this is important.
   answer: ''
+  mark: 5
   years:
     2017:
       - AGM
@@ -76,6 +80,7 @@
     ```bash
     figlet DONGS
     ```
+  mark: 2
   years:
     2013:
       - AGM

@@ -28,7 +28,10 @@
     When running a Docker container, how would you bind port 22000 on the host
     to port 80 of the container?
   answer: '`docker run -d --name app -p 22000:80 my/app`'
+  mark: 1
   years:
+    2017:
+      - AGM
     2018:
       - AGM
 
@@ -50,8 +53,11 @@
   answer: >-
     A container orchestrator is system which manages containerized applications
     in a clustered environment. Examples include Swarm & Kubernetes.
+  mark: 2
   years:
     2018:
+      - AGM
+    2017:
       - AGM
 
 - question: What is the difference between ‘docker attach’ and ‘docker exec’?
@@ -60,8 +66,11 @@
       it's PID 1.
     - `docker exec -it < container-id > bash` will not take you into PID 1 and
       will instead create a new process for bash
+  mark: 2
   years:
     2018:
+      - AGM
+    2017:
       - AGM
 
 - question: What is Rkt?
@@ -84,4 +93,57 @@
   answer: '`docker system prune -a -f`'
   years:
     2018:
+      - AGM
+
+- question: What is Docker? What does Redbrick use it for?
+  answer: ""
+  mark: 2
+  years:
+    2017:
+      - AGM
+
+- question: >-
+    How do you make data persist across a container restart? Give an example of
+    the command.
+  answer: ""
+  mark: 2
+  years:
+    2017:
+      - AGM
+
+- question: What are 2 methods of getting logs out of a docker container?
+  answer: ""
+  mark: 2
+  years:
+    2017:
+      - AGM
+
+- question: >-
+    You try to run a container and it doesn’t start.
+    How would you go about debugging the problem?
+  answer: ""
+  mark: 3
+  years:
+    2017:
+      - AGM
+
+- question: What command do you use to update a docker image?
+  answer: ""
+  mark: 1
+  years:
+    2017:
+      - AGM
+
+- question: What is docker-compose? What does Redbrick use it for?
+  answer: ""
+  mark: 2
+  years:
+    2017:
+      - AGM
+
+- question: When should you use a docker-compose file vs a Dockerfile?
+  answer: ""
+  mark: 3
+  years:
+    2017:
       - AGM

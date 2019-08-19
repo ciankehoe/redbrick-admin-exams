@@ -3,6 +3,7 @@
   answer: |-
     - Edit `/etc/ssh/sshd_config`, change `PermitRootLogin` from yes to no.
     - Reload `sshd`
+  mark: 3
   years:
     2018:
       - AGM
@@ -11,6 +12,7 @@
 
 - question: 'Why might you want to run SSH on a non-standard port?'
   answer: 'It would be harder to brute force a user login.'
+  mark: 2
   years:
     2017:
       - AGM
@@ -18,6 +20,7 @@
 - question: >-
     You have forgotten the `passwordsafe` password. How do you gain access?
   answer: Ask another admin, encrypt it with PGP if you have to.
+  mark: 2
   years:
     2017:
       - AGM
@@ -26,6 +29,7 @@
   answer: >-
     It's basically open season for all users, groups and others to have a go at
     your files.
+  mark: 3
   years:
     2017:
       - AGM
@@ -46,6 +50,7 @@
       allowing them to edit the code that is executed.
     - They could read the database password from the `database.php` file and
       steal any info
+  mark: 3
   years:
     2017:
       - AGM
@@ -57,6 +62,7 @@
     Web content should not be owned by this user, or a compromised web server
     would be able to rewrite a web site. Data written out by web servers will
     be owned by `www-data`.
+  mark: 3
   years:
     2018:
       - AGM
@@ -69,6 +75,7 @@
   answer: >-
     You are passing the Root Password to the console in plain text. This can
     show up in logs, history, you name it.
+  mark: 2
   years:
     2018:
       - AGM
@@ -81,6 +88,7 @@
   answer: >-
     Ban Chinese IP's via subnet with iptables rules. There's lots of chinese ip
     adress space  youll need a large subnet
+  mark: 2
   years:
     2018:
       - AGM
@@ -106,9 +114,19 @@
       - SSL certificates are used to create an encrypted link between a client
         and server
     - KPTI
+  mark: 5
   years:
     2018:
       - AGM
+    2017:
+      - AGM
+
+- question: >-
+    A major Linux security vulnerability has been announced. How do you go about
+    patching your machines with minimal downtime?
+  answer: ""
+  mark: 5
+  years:
     2017:
       - AGM
 

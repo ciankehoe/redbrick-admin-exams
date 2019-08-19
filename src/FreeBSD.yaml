@@ -7,6 +7,8 @@
   years:
     2018:
       - AGM
+    2016:
+      - AGM
     2013:
       - AGM
 
@@ -32,6 +34,7 @@
        sources.
     3. Different styles of booting - BSD `rc.d` style booting vs Linux `SysV`
        style `init.d` booting.
+  mark: 3
   years:
     2017:
       - AGM
@@ -45,7 +48,10 @@
     - This is because you also need to be added to the wheel group.
     - Use something like `pw groupmod wheel -m $USERNAME` to add a user to the
       wheel group.
+  mark: 3
   years:
+    2016:
+      - AGM
     2017:
       - AGM
     2018:
@@ -59,18 +65,25 @@
     - You might want to use one for security and ease of administration. For
       example, if you want to define a clear-cut separation between hosted
       services and those of other users.
+  mark: 3
   years:
+    2016:
+      - AGM
     2017:
       - AGM
 
 - question: What does Redbrick use FreeBSD for?
   answer: Password safe, and Bastion host
+  mark: 3
   years:
     2017:
+      - AGM
+    2016:
       - AGM
 
 - question: 'What utility would you use to manage users and groups on FreeBSD?'
   answer: '`pw` can be used to modify all aspects of user accounts'
+  mark: 1
   years:
     2017:
       - AGM
@@ -81,7 +94,10 @@
   answer: |-
     - Probably use BSD's `cron`. It understand `@reboot` as a time directive.
     - So, something like `@reboot /home/user/resign.sh`
+  mark: 2
   years:
+    2016:
+      - AGM
     2017:
       - AGM
     2018:
@@ -89,7 +105,10 @@
 
 - question: 'How would you configure a network interface on FreeBSD?'
   answer: '`ifconfig interface ed0`'
+  mark: 4
   years:
+    2016:
+      - AGM
     2017:
       - AGM
     2018:
@@ -97,18 +116,21 @@
 
 - question: What is the command to list the currently loaded pf rules?
   answer: '`pfctl -s rules`'
+  mark: 2
   years:
     2017:
       - AGM
 
 - question: How would you install packages in FreeBSD?
   answer: Packages can be installed in FreeBSD through the ports system.
+  mark: 2
   years:
     2017:
       - AGM
 
 - question: How would you show the routing table in FreeBSD?
   answer: "`netstat -rn` works, I don't know if you can do it using `route`."
+  mark: 2
   years:
     2017:
       - AGM
@@ -139,6 +161,8 @@
   years:
     2018:
       - AGM
+    2016:
+      - AGM
 
 - question: >-
     The manpages on a freebsd box are broken. What command will help you fix
@@ -154,6 +178,8 @@
     to perform certain tasks
   years:
     2013:
+      - AGM
+    2016:
       - AGM
 
 - question: What is the ports tree? How do you update it? How do you search it?
@@ -193,4 +219,11 @@
   answer: '`freebsd-upd`'
   years:
     2013:
+      - AGM
+
+- question: How do you install precompiled binaries on a BSD environment?
+  answer: '`pkg-install $bin-name`'
+  mark: 3
+  years:
+    2016:
       - AGM

@@ -8,14 +8,20 @@ from os import makedirs, path
 from re import findall
 from typing import Dict, List, Optional, Tuple
 
+from attr import s, ib, converters
 from jinja2 import Template
 from structlog import configure, dev, get_logger, processors, stdlib
 from yaml import YAMLError, safe_load
 
 
+@s(auto_attribs=True)
 class Question:
     """A exam qeustion and its answer"""
 
+    question: str
+    answer: str = ib(converter=converters.optional(str))
+    mark: Optional[int] = None
+    years: dict = {}
     template = Template(
         """1. {{ question }} {%- if mark is not none %} **({{ mark }} marks)**{%- endif %}
 {% if multiline_question is defined-%}
@@ -29,11 +35,6 @@ class Question:
 {%- endif -%}
 {% endif %}"""
     )
-
-    def __init__(self, question: str, answer: str, mark: int = None):
-        self.question: str = question
-        self.answer: str = str(answer)
-        self.mark: Optional[int] = mark
 
     def __str__(self) -> str:
         if bool(self.question.count("\n")):
@@ -54,19 +55,18 @@ class Question:
         )
 
 
+@s(auto_attribs=True)
 class Topic:
     """an exam topic made up multiple questions"""
 
+    title: str
+    questions: List[Question]
     template = Template(
         """## {{title}}
 {% for question in questions %}
 {{ question }}
 {%- endfor -%}"""
     )
-
-    def __init__(self, title: str, questions: List[Question]):
-        self.title: str = title
-        self.questions: List[Question] = questions
 
     def __str__(self) -> str:
         return self.template.render(questions=self.questions, title=self.title)
@@ -102,12 +102,8 @@ def parse_topic(topic: List[dict]) -> Dict[str, List[Question]]:
     """covert a raw dictionary to a dict mapping exams to a list of questions"""
     topics_exams: Dict[str, List[Question]] = {}
     for question_dict in topic:
-        question = Question(
-            question_dict["question"],
-            question_dict["answer"],
-            question_dict["mark"] if "mark" in question_dict else None,
-        )
-        for year, exams in question_dict["years"].items():
+        question = Question(**question_dict)
+        for year, exams in question.years.items():
             for exam in exams:
                 exam_id = f"{year}-{exam}"
                 if exam_id in topics_exams:

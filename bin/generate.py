@@ -19,7 +19,9 @@ class Question:
     template = Template(
         """1. {{ question }} {%- if mark is not none %} **({{ mark }} marks)**{%- endif %}
 {% if multiline_question is defined-%}
+{% filter indent(width=3) %}
 {{ multiline_question }}
+{% endfilter %}
 {%- endif %}
 {% if answer | length %}
    Answer:{% if not answer_multiline %} {{ answer }}{% else %}

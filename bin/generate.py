@@ -19,7 +19,7 @@ class Question:
     """A exam qeustion and its answer"""
 
     question: str
-    answer: str = ib(converter=converters.optional(str))
+    answer: str = ib(default="", converter=converters.optional(str))
     mark: Optional[int] = None
     years: dict = {}
     template = Template(

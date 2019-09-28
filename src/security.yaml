@@ -22,6 +22,8 @@
   answer: Ask another admin, encrypt it with PGP if you have to.
   mark: 2
   years:
+    2016:
+      - AGM
     2017:
       - AGM
 
@@ -40,8 +42,8 @@
     ```bash
     gobshite@azazel (~/public_html/) -> ls -l               [8:25]
     total 12K
-    -rwxrwxrwx 1 gobshite member 116 2013-10-21 19:55 blah.php
-    -rwxrwxrwx 1 gobshite member 50 2013-10-21 19:25 database.php
+    -rwxrwxrwx 1 gobshite member 116  2013-10-21 19:55 blah.php
+    -rwxrwxrwx 1 gobshite member 50   2013-10-21 19:25 database.php
     -rwxrwxrwx 1 gobshite member 1593 2013-10-21 19:17 index.php
     ```
     How would a regular user go about exploiting this?
@@ -124,7 +126,6 @@
 - question: >-
     A major Linux security vulnerability has been announced. How do you go about
     patching your machines with minimal downtime?
-  answer: ""
   mark: 5
   years:
     2017:
@@ -159,15 +160,15 @@
   years:
     2018:
       - AGM
+    2016:
+      - AGM
 
 - question: What is a CVE, and why should you care?
-  answer: ''
   years:
     2018:
       - AGM
 
 - question: Tell us something interesting you know about computer security.
-  answer: ''
   years:
     2018:
       - AGM
@@ -176,7 +177,6 @@
     You left a terminal unlocked where you were logged into a Redbrick server as
     root. Someone has done something nefarious, and deleted the history files.
     How could you go about finding out what they did?
-  answer: ''
   years:
     2018:
       - AGM
@@ -203,13 +203,97 @@
       - AGM
 
 - question: What is PAM? What do we use it in conjunction with?
-  answer: ''
+  mark: 3
   years:
     2018:
+      - AGM
+    2016:
       - AGM
 
 - question: Why do Redbrick NOT use POP, FTP or Telnet?
   answer: because all of these are unencrypted
+  mark: 2
   years:
     2018:
+      - AGM
+    2016:
+      - AGM
+
+- question: What is the standard firewall bundled with Ubuntu
+  mark: 1
+  years:
+    2016:
+      - AGM
+
+- question: Show me all the files the www­data user currently has open
+  answer: '`lsof | grep user`'
+  mark: 1
+  years:
+    2016:
+      - AGM
+
+- question: >-
+    You’re root; you attempt to ssh to another Redbrick server; why doesn’t this
+    work?
+  answer: 'redbrick disables ssh as root'
+  mark: 1
+  years:
+    2016:
+      - AGM
+
+- question: What is a chroot? When would you use one?
+  mark: 3
+  years:
+    2016:
+      - AGM
+
+- question: What is a sticky bit? Why would you enable it?
+  mark: 2
+  years:
+    2016:
+      - AGM
+
+- question: >-
+    What is a bastion host? Why would you use one? What considerations should be
+    made when creating a bastion host?
+  mark: 5
+  years:
+    2016:
+      - AGM
+
+- question: |-
+    What is wrong with the below? (3)
+    ```
+    -rwxrwxrwx 1  subaqua club 418   Sep 25 2013  index.php
+    -rwxrwxrwx 1  subaqua club 19930 Jan 27 09:37 license.txt
+    -rwxrwxrwx 1  subaqua club 5035  Oct 6  22:56 wp-activate.php
+    drwxrxxrwx 9  subaqua club 4096  Dec 8  23:45 wp-admin
+    -rwxrwxrwx 1  subaqua club 271   Jan 8  2012  wp-blog-header.php
+    -rwxrwxrwx 1  subaqua club 1369  Oct 3  15:47 wp-comments-post.php
+    -rwxrwxrwx 1  subaqua club 3052  Jan 3  21:22 wp-config.php
+    -rwxrwxrwx 1  subaqua club 2853  Jan 27 09:37 wp-config-sample.php
+    drwxrxxrwx 6  subaqua club 103   Jan 27 09:37 wp-content
+    -rwxrwxrwx 1  subaqua club 3286  May 24 2015  wp-cron.php
+    drwxrxxrwx 16 subaqua club 8192  Dec 8  23:45 wp-includes
+    -rwxrwxrwx 1  subaqua club 2380  Oct 24 2013  wp-links-opml.php
+    -rwxrwxrwx 1  subaqua club 3316  Nov 5  23:59 wp-load.php
+    -rwxrwxrwx 1  subaqua club 33770 Jan 27 09:37 wp-login.php
+    -rwxrwxrwx 1  subaqua club 7887  Oct 6  15:07 wp-mail.php
+    -rwxrwxrwx 1  subaqua club 13021 Nov 20 07:24 wp-settings.php
+    -rwxrwxrwx 1  subaqua club 28594 Oct 30 08:52 wp-signup.php
+    -rwxrwxrwx 1  subaqua club 4035  Nov 30 2014  wp-trackback.php
+    -rwxrwxrwx 1  subaqua club 3061  Oct 2  23:46 xmlrpc.php
+    ```
+  mark: 3
+  years:
+    2016:
+      - AGM
+
+- question: >-
+    `echo $PATH` returns the following:
+    `/$HOME/bin/:/home/public_html/:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/usr/games`
+    Why is this concerning? How could this be exploited?
+  mark: 5
+  years:
+    2016:
       - AGM

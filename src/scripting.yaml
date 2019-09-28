@@ -47,7 +47,6 @@
     all users who need to change their with the old passwords, email them saying
     they need to change their password and that their php has been disabled. The
     script should also disable those users php if it access mysql.
-  answer: ''
   mark: 10
   years:
     2017:
@@ -57,7 +56,6 @@
     Write a script to scan all users' web directories for world editable files.
     Change their permissions to the correct permissions and email the user
     telling them the file you changed and why this is important.
-  answer: ''
   mark: 5
   years:
     2017:
@@ -93,7 +91,6 @@
     Write a script to retrieve the logs of all currently running Docker
     containers on a system, and compress each one into a `.tar` file with the
     same name as the source container.
-  answer: ''
   years:
     2018:
       - AGM

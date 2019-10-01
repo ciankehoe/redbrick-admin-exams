@@ -43,7 +43,6 @@
 - question: >-
     No one can seem to connect to anything on Redbrick. Walk us through how you
     would go about trouble shooting this.
-  answer: ''
   mark: 2
   years:
     2017:
@@ -73,7 +72,6 @@
 - question: >-
     How would you go about looking at a config on one our switches or SRX
     (juniper or cisco)
-  answer: ''
   years:
     2017:
       - AGM
@@ -96,7 +94,6 @@
 - question: >-
     Explain briefly what happens when you type in `redbrick.dcu.ie` into a
     browser.
-  answer: ''
   mark: 4
   years:
     2017:

@@ -30,6 +30,8 @@
   answer: '`docker run -d --name app -p 22000:80 my/app`'
   mark: 1
   years:
+    2016:
+      - AGM
     2017:
       - AGM
     2018:
@@ -39,12 +41,14 @@
     What command would you use to download a Docker image from a registy? Give
     an example usage of this command.
   answer: '`docker pull hello-world`'
+  mark: 4
   years:
+    2016:
+      - AGM
     2018:
       - AGM
 
 - question: Illustrate 3 differences between Docker Swarm and Kubernetes.
-  answer: ''
   years:
     2018:
       - AGM
@@ -58,6 +62,8 @@
     2018:
       - AGM
     2017:
+      - AGM
+    2016:
       - AGM
 
 - question: What is the difference between ‘docker attach’ and ‘docker exec’?
@@ -84,7 +90,6 @@
 - question: >-
     In the context of a container orchestrator, what is the significance of the
     term ‘consensus’?
-  answer: ''
   years:
     2018:
       - AGM
@@ -96,54 +101,100 @@
       - AGM
 
 - question: What is Docker? What does Redbrick use it for?
-  answer: ""
   mark: 2
   years:
+    2016:
+      - AGM
     2017:
       - AGM
 
 - question: >-
     How do you make data persist across a container restart? Give an example of
     the command.
-  answer: ""
   mark: 2
   years:
+    2016:
+      - AGM
     2017:
       - AGM
 
 - question: What are 2 methods of getting logs out of a docker container?
-  answer: ""
   mark: 2
   years:
     2017:
       - AGM
 
 - question: >-
-    You try to run a container and it doesn’t start.
-    How would you go about debugging the problem?
-  answer: ""
+    You try to run a container and it doesn’t start. How would you go about
+    debugging the problem?
   mark: 3
   years:
+    2016:
+      - AGM
     2017:
       - AGM
 
 - question: What command do you use to update a docker image?
-  answer: ""
   mark: 1
   years:
     2017:
       - AGM
 
 - question: What is docker-compose? What does Redbrick use it for?
-  answer: ""
   mark: 2
   years:
     2017:
       - AGM
 
 - question: When should you use a docker-compose file vs a Dockerfile?
-  answer: ""
   mark: 3
   years:
     2017:
+      - AGM
+
+- question: >-
+    Write down the command you would use to launch an interactive shell in a
+    Ubuntu container
+  answer: '`docker run --rm -it ubuntu /bin/bash`'
+  mark: 4
+  years:
+    2016:
+      - AGM
+
+- question: >-
+    Write down the command you would use to network two containers together?
+  mark: 4
+  years:
+    2016:
+      - AGM
+
+- question: >-
+    What is the name of the application used to control a Kubernetes Cluster
+  answer: 'kubectl'
+  mark: 2
+  years:
+    2016:
+      - AGM
+
+- question: |-
+    Describe the following terms in the context of Kubernetes:
+      i. Node
+      i. Pod
+      i. Service
+      i. Volume
+  mark: 8
+  years:
+    2016:
+      - AGM
+
+- question: What happens to the workers if a Kubernetes master goes down?
+  mark: 2
+  years:
+    2016:
+      - AGM
+
+- question: What happens if you have multiple masters in one cluster? (2)
+  mark: 2
+  years:
+    2016:
       - AGM

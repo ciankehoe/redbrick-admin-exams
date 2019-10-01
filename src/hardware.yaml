@@ -1,8 +1,14 @@
 ---
-- question: 'What does NIC stand for?'
-  answer: 'Network Interface Card'
+- question: What does NIC stand for?
+  answer: Network Interface Card
   years:
     2018:
+      - AGM
+
+- question: What does RAID stand for? Software or Hardware? Why?
+  mark: 3
+  years:
+    2016:
       - AGM
 
 - question: >-
@@ -24,6 +30,24 @@
     - Out of a possible 20TB, 18TB is available for storage.
   years:
     2018:
+      - AGM
+
+
+- question: >-
+    You have 4 Disks all with the same speed and capacity, using diagrams, give
+    4 possible RAID configurations.
+  answer: ""
+  mark: 5
+  years:
+    2016:
+      - AGM
+
+- question: >-
+    Which of the 4 configs gives the optimal RW speed;Capacity and Redundancy
+  answer: ""
+  mark: 3
+  years:
+    2016:
       - AGM
 
 - question: What does UPS stand for? Where would you mount a UPS and why?
@@ -49,6 +73,16 @@
     2018:
       - AGM
 
+- question: |-
+    What are the following and how do they differ?
+    a. DAS
+    b. SAN
+    c. NAS
+  mark: 4
+  years:
+    2016:
+      - AGM
+
 - question: The air conditioning in your server room has failed. What do you do?
   answer: |-
     - Shut off any equipment that is not critical to reduce heat
@@ -71,16 +105,21 @@
     - SAS
     - SCSI
     - QSFP+
-  answer: ''
   years:
     2018:
+      - AGM
+
+- question: What is an SFP? Where would you expect to find one?
+  mark: 2
+  years:
+    2016:
       - AGM
 
 - question: What is the UUID of a disk, and why would it be useful?
   answer: |-
     - The UUID of a disk is it's Universally Unique Identifier.
-    - This is useful because it can be used to identify a device independent from
-      its mount point or device name.
+    - This is useful because it can be used to identify a device independent
+      from its mount point or device name.
   years:
     2018:
       - AGM
@@ -148,4 +187,10 @@
       directly
   years:
     2013:
+      - AGM
+
+- question: What is an IP­KVM, how does it differ from a regular KVM?
+  mark: 2
+  years:
+    2016:
       - AGM

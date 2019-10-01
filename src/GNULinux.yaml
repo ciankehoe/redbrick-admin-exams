@@ -159,7 +159,6 @@
     A user has somehow renamed a file to a name with strange unicode characters
     and you cannot delete that file by name. How would you go about deleting
     that file? Give commands with parameters.
-  answer: ''
   mark: 4
   years:
     2017:

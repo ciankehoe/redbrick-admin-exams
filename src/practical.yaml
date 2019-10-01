@@ -113,7 +113,6 @@
     1. setup fail2ban
     1. add 2 users of your choice
     1. enable one of these accounts to be able to use sudo
-  answer: ""
   mark: 45
   years:
     2017:
